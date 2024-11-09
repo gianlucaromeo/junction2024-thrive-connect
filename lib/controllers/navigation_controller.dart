@@ -8,7 +8,7 @@ class NavigationController {
     '/team', // 3
   ];
 
-  int _currentIndex = 0;
+  int _currentIndex = 1;
 
   final RxInt _currentJobOfferIndex = 0.obs;
 

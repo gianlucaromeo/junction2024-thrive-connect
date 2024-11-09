@@ -59,7 +59,7 @@ class MainApp extends StatelessWidget {
           transition: Transition.rightToLeftWithFade,
         ),
       ],
-      initialRoute: '/favorites',
+      initialRoute: '/reels',
     );
   }
 }
