@@ -204,7 +204,7 @@ class ReelsPage extends GetView<DataController> {
                                         children: [
                                           IconButton(
                                             icon: const Icon(
-                                                Icons.favorite_border),
+                                                Icons.bookmark_outline_outlined),
                                             color: Colors.white,
                                             onPressed: () {
                                               // TODO
