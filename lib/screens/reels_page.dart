@@ -105,28 +105,29 @@ class ReelsPage extends GetView<DataController> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Wrap(
+                                            spacing: 12.0,
                                             children: hobbies
                                                 .map(
                                                   (hobby) => Container(
-                                                    margin: 4.0.paddingOnlyRight,
                                                     padding: const EdgeInsets.symmetric(
-                                                      horizontal: 8.0,
-                                                      vertical: 4.0,
+                                                      horizontal: 24.0,
+                                                      vertical: 12.0,
                                                     ),
                                                     decoration: BoxDecoration(
-                                                      color: AppColors.grey,
+                                                      color: AppColors.greenPastel,
                                                       borderRadius: BorderRadius.circular(16.0),
                                                     ),
                                                     child: Text(
                                                       hobby.name,
-                                                      style: AppFonts.bodyS.copyWith(
-                                                        color: Colors.white,
+                                                      style: AppFonts.actionL.copyWith(
+                                                        color: AppColors.greenText,
                                                       ),
                                                     ),
                                                   ),
                                                 )
                                                 .toList(),
                                           ),
+                                          10.0.verticalSpace,
                                           Text(
                                             jobOffer.title,
                                             style: AppFonts.h1.copyWith(
