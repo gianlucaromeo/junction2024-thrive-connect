@@ -219,7 +219,7 @@ class JobPage extends GetView<DataController> {
         width: 150.0,
         child: FloatingActionButton(
           onPressed: () {
-            // navigationController.currentJobOfferIndex++;
+            navigationController.pushToIndex(6);
           },
           backgroundColor: AppColors.purpleText,
           shape: OutlineInputBorder(

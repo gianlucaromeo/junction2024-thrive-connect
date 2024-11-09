@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:junction2024_thrive_connect/controllers/data_controller.dart';
 import 'package:junction2024_thrive_connect/controllers/navigation_controller.dart';
+import 'package:junction2024_thrive_connect/screens/application_sent_page.dart';
 import 'package:junction2024_thrive_connect/screens/favorites_page.dart';
 import 'package:junction2024_thrive_connect/screens/job_page.dart';
 import 'package:junction2024_thrive_connect/screens/reels_page.dart';
@@ -68,6 +69,11 @@ class MainApp extends StatelessWidget {
         GetPage(
           name: '/job',
           page: () => JobPage(),
+          transition: Transition.rightToLeftWithFade,
+        ),
+        GetPage(
+          name: '/applicationSent',
+          page: () => ApplicationSentPage(),
           transition: Transition.rightToLeftWithFade,
         ),
       ],
