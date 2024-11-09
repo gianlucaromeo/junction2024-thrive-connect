@@ -51,7 +51,7 @@ class EmployeeCard extends GetView<DataController> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(24),
                 child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 50, sigmaY: 80),
+                  filter: ImageFilter.blur(sigmaX: 30, sigmaY: 50),
                   child: Container(
                     padding: 20.0.paddingAll,
                     decoration: BoxDecoration(

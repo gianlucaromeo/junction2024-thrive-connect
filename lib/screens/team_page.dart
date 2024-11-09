@@ -166,7 +166,7 @@ class TeamPage extends GetView<DataController> {
         ],
       ),
       floatingActionButton: Container(
-        width: 200.0,
+        width: 175.0,
         child: FloatingActionButton(
           onPressed: () {},
           backgroundColor: AppColors.purpleText,
@@ -175,7 +175,7 @@ class TeamPage extends GetView<DataController> {
             borderSide: BorderSide.none,
           ),
           child: Text(
-            "Apply",
+            "About the job",
             style: AppFonts.actionL.copyWith(
               color: AppColors.white,
             ),
