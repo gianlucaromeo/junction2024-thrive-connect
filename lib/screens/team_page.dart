@@ -168,7 +168,9 @@ class TeamPage extends GetView<DataController> {
       floatingActionButton: Container(
         width: 175.0,
         child: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.find<NavigationController>().pushToIndex(4);
+          },
           backgroundColor: AppColors.purpleText,
           shape: OutlineInputBorder(
             borderRadius: BorderRadius.circular(24.0),

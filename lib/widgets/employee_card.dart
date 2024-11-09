@@ -51,7 +51,7 @@ class EmployeeCard extends GetView<DataController> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(24),
                 child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 30, sigmaY: 50),
+                  filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                   child: Container(
                     padding: 20.0.paddingAll,
                     decoration: BoxDecoration(
@@ -146,13 +146,14 @@ class EmployeeCard extends GetView<DataController> {
                           : Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
+                                IconButton(onPressed: () {
+                                  details.value = !details.value;
+                                }, icon: Icon(Icons.keyboard_arrow_up_outlined),
+                                ),
+                                6.0.verticalSpace,
                                 Text(
                                   '${employee.firstName} ${employee.lastName}',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: AppFonts.h2,
                                 ),
                                 Text(
                                   textAlign: TextAlign.center,
