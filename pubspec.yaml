@@ -28,4 +28,5 @@ flutter:
 
   assets:
     - assets/data.json
-    - assets/images/
+    - assets/images/teams/
+    - assets/images/employee/

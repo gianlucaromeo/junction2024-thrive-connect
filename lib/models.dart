@@ -145,6 +145,7 @@ class Employee {
   final List<String> teamIds;
   final String role;
   final String workStyle;
+  final String img;
 
   Employee({
     required this.id,
@@ -157,6 +158,7 @@ class Employee {
     required this.teamIds,
     required this.workStyle,
     required this.role,
+    required this.img,
   });
 
   factory Employee.fromJson(Map<String, dynamic> json) => Employee(
@@ -170,6 +172,7 @@ class Employee {
         teamIds: List<String>.from(json['teamIds'] ?? []),
         workStyle: json['workStyle'],
         role: json['role'],
+        img: json['img'],
       );
 
   Map<String, dynamic> toJson() => {
@@ -183,6 +186,7 @@ class Employee {
         'teamIds': teamIds,
         'workStyle': workStyle,
         'role': role,
+        'img': img,
       };
 }
 

@@ -7,6 +7,7 @@ import 'package:junction2024_thrive_connect/controllers/navigation_controller.da
 import 'package:junction2024_thrive_connect/extensions.dart';
 import 'package:junction2024_thrive_connect/models.dart';
 import 'package:junction2024_thrive_connect/ui.dart';
+import 'package:junction2024_thrive_connect/widgets/employee_card.dart';
 
 class TeamPage extends GetView<DataController> {
   TeamPage({super.key});
@@ -68,88 +69,95 @@ class TeamPage extends GetView<DataController> {
           SliverList(
             delegate: SliverChildListDelegate([
               Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    /// TITLE
-                    Text(
-                      team.name,
-                      style: AppFonts.h1.copyWith(),
-                    ),
-                    8.0.verticalSpace,
+                  padding: const EdgeInsets.all(20.0),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        /// TITLE
+                        Text(
+                          team.name,
+                          style: AppFonts.h1.copyWith(),
+                        ),
+                        8.0.verticalSpace,
 
-                    /// LANGUAGE AND LOCATION
-                    Text(
-                      "${jobOffer.language} • ${jobOffer.location}",
-                      style: AppFonts.bodyS.copyWith(),
-                    ),
-                    20.0.verticalSpace,
+                        /// LANGUAGE AND LOCATION
+                        Text(
+                          "${jobOffer.language} • ${jobOffer.location}",
+                          style: AppFonts.bodyS.copyWith(),
+                        ),
+                        20.0.verticalSpace,
 
-                    /// DESCRIPTION
-                    Text(team.description),
-                    20.0.verticalSpace,
-                    Text("Team members' hobbies",
-                        style: AppFonts.h3.copyWith()),
-                    10.0.verticalSpace,
+                        /// DESCRIPTION
+                        Text(team.description),
+                        20.0.verticalSpace,
+                        Text("Team members' hobbies",
+                            style: AppFonts.h3.copyWith()),
+                        10.0.verticalSpace,
 
-                    /// HOBBIES
-                    Wrap(
-                      spacing: 8.0,
-                      runSpacing: 8.0,
-                      children: hobbies
-                          .map(
-                            (hobby) => Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 10.0,
-                                vertical: 4.0,
-                              ),
-                              decoration: BoxDecoration(
-                                color: AppColors.greenPastel,
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              child: Text(
-                                hobby.name,
-                                style: AppFonts.actionL.copyWith(
-                                  color: AppColors.greenText,
+                        /// HOBBIES
+                        Wrap(
+                          spacing: 8.0,
+                          runSpacing: 8.0,
+                          children: hobbies
+                              .map(
+                                (hobby) => Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 10.0,
+                                    vertical: 4.0,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.greenPastel,
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
+                                  child: Text(
+                                    hobby.name,
+                                    style: AppFonts.actionL.copyWith(
+                                      color: AppColors.greenText,
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                          )
-                          .toList(),
-                    ),
-                    20.0.verticalSpace,
+                              )
+                              .toList(),
+                        ),
+                        20.0.verticalSpace,
 
-                    /// COMPANY VALUES
-                    Text("Company values", style: AppFonts.h3.copyWith()),
-                    10.0.verticalSpace,
-                    Wrap(
-                      spacing: 8.0,
-                      runSpacing: 8.0,
-                      children: companyValues
-                          .map(
-                            (value) => Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 10.0,
-                                vertical: 4.0,
-                              ),
-                              decoration: BoxDecoration(
-                                color: AppColors.purplePastel,
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              child: Text(
-                                value.name,
-                                style: AppFonts.actionL.copyWith(
-                                  color: AppColors.purpleText,
+                        /// COMPANY VALUES
+                        Text("Company values", style: AppFonts.h3.copyWith()),
+                        10.0.verticalSpace,
+                        Wrap(
+                          spacing: 8.0,
+                          runSpacing: 8.0,
+                          children: companyValues
+                              .map(
+                                (value) => Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 10.0,
+                                    vertical: 4.0,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.purplePastel,
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
+                                  child: Text(
+                                    value.name,
+                                    style: AppFonts.actionL.copyWith(
+                                      color: AppColors.purpleText,
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                          )
-                          .toList(),
+                              )
+                              .toList(),
+                        ),
+                        20.0.verticalSpace,
+                        ...employees
+                            .map(
+                              (employee) => EmployeeCard(employee: employee),
+                            )
+                            .toList(),
+                      ],
                     ),
-                  ],
-                ),
-              ),
+                  )),
             ]),
           ),
         ],
