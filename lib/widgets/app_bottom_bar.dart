@@ -17,13 +17,6 @@ class AppBottomBar extends GetView<NavigationController> {
         decoration: BoxDecoration(
           color: AppColors.neutralDarkDarkest,
           borderRadius: BorderRadius.circular(32.0),
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.neutralDarkLight.withOpacity(0.1),
-              offset: const Offset(0.0, -4.0),
-              blurRadius: 8.0,
-            ),
-          ],
         ),
         padding: const EdgeInsets.symmetric(
           horizontal: 20.0,

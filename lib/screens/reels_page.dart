@@ -21,7 +21,7 @@ class ReelsPage extends GetView<DataController> {
           onHorizontalDragUpdate: (details) {
             if (details.primaryDelta != null) {
               if (details.primaryDelta! < -20) {
-                Get.find<NavigationController>().pushToIndex(2);
+                Get.find<NavigationController>().pushToIndex(3);
               }
             }
           },
