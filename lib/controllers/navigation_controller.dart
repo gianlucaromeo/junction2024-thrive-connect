@@ -2,10 +2,9 @@ import 'package:get/get.dart';
 
 class NavigationController {
   final _routes = [
-    '/learn',
-    '/exercises',
-    '/exercises/current',
-    '/learn/current',
+    '/reels',
+    '/profile',
+    '/team',
   ];
 
   int _currentIndex = 0;

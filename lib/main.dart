@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:junction2024_thrive_connect/controllers/navigation_controller.dart';
-import 'package:junction2024_thrive_connect/screens/page1.dart';
-import 'package:junction2024_thrive_connect/screens/page1_1.dart';
-import 'package:junction2024_thrive_connect/screens/page2.dart';
-import 'package:junction2024_thrive_connect/screens/page3.dart';
+import 'package:junction2024_thrive_connect/screens/reels_page.dart';
+import 'package:junction2024_thrive_connect/screens/profile_page.dart';
+import 'package:junction2024_thrive_connect/screens/team_page.dart';
 import 'package:junction2024_thrive_connect/ui.dart';
 
 void main() async {
@@ -35,27 +34,22 @@ class MainApp extends StatelessWidget {
       ),
       getPages: [
         GetPage(
-          name: '/learn',
-          page: () => Page1(),
+          name: '/reels',
+          page: () => const ReelsPage(),
           transition: Transition.noTransition,
         ),
         GetPage(
-          name: '/learn/current',
-          page: () => Page1_1(),
+          name: '/profile',
+          page: () => const ProfilePage(),
           transition: Transition.noTransition,
         ),
         GetPage(
-          name: '/exercises',
-          page: () => Page2(),
-          transition: Transition.noTransition,
-        ),
-        GetPage(
-          name: '/exercises/current',
-          page: () => Page3(),
-          transition: Transition.noTransition,
+          name: '/team',
+          page: () => const TeamPage(),
+          transition: Transition.rightToLeftWithFade,
         ),
       ],
-      initialRoute: '/learn',
+      initialRoute: '/reels',
     );
   }
 }
