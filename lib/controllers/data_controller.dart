@@ -46,6 +46,11 @@ class DataController extends GetxController {
     return hobbies.firstWhere((hobby) => hobby.id == hobbyId);
   }
 
+  CompanyValue getValues(String valueID) {
+    return companyValues
+        .firstWhere((companyValue) => companyValue.id == valueID);
+  }
+
   void applyFilter(String text) {
     final filter = text.toLowerCase();
 

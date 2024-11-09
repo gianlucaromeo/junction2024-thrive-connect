@@ -13,6 +13,7 @@ class TeamPage extends GetView<DataController> {
   TeamPage({super.key});
 
   final navigationController = Get.find<NavigationController>();
+  final details = ''.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +124,8 @@ class TeamPage extends GetView<DataController> {
                         20.0.verticalSpace,
 
                         /// COMPANY VALUES
-                        Text("Company values", style: AppFonts.h3.copyWith()),
+                        Text("Team members' values",
+                            style: AppFonts.h3.copyWith()),
                         10.0.verticalSpace,
                         Wrap(
                           spacing: 8.0,
@@ -155,6 +157,7 @@ class TeamPage extends GetView<DataController> {
                               (employee) => EmployeeCard(employee: employee),
                             )
                             .toList(),
+                        40.0.verticalSpace,
                       ],
                     ),
                   )),
