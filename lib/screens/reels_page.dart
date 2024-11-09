@@ -15,6 +15,7 @@ class ReelsPage extends GetView<DataController> {
     return PopScope(
       canPop: false,
       child: Scaffold(
+        extendBody: true,
         resizeToAvoidBottomInset: false,
         body: GestureDetector(
           onHorizontalDragUpdate: (details) {

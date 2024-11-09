@@ -29,11 +29,14 @@ class AppColors {
 
   /* NEUTRAL / DARK **/
   static get neutralDarkDarkest => const Color(0xFF0D0B26); // Search Bar,
-  static get neutralDarkLight => const Color(0xFF71727A);
+  static get neutralDarkLight => const Color(0xFF9DB2CE); // App Bar Icon unselected,
   static get neutralDarkLightest => const Color(0xFF8F9098);
 
   /* ERROR */
   static get error => const Color(0xFFED3241);
+
+  /* OTHER */
+  static get selectedIconBackgroundColor => const Color(0xFFC2D8BE);
 }
 
 TextStyle _ts(FontWeight fontWeight, double fontSize) {
