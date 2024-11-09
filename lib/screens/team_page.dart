@@ -37,10 +37,16 @@ class TeamPage extends GetView<DataController> {
             leading: Padding(
               padding: 20.0.paddingOnlyLeft,
               child: TextButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Get.find<NavigationController>().setCurrentIndex(1);
+                },
                 icon: Icon(Icons.arrow_back, color: AppColors.greenPastel),
-                label: Text("Back",
-                    style: TextStyle(color: AppColors.greenPastel)),
+                label: Text(
+                  "Back",
+                  style: TextStyle(
+                    color: AppColors.greenPastel,
+                  ),
+                ),
                 style: TextButton.styleFrom(
                   backgroundColor: AppColors.black,
                 ),
@@ -72,18 +78,19 @@ class TeamPage extends GetView<DataController> {
                       style: AppFonts.h1.copyWith(),
                     ),
                     8.0.verticalSpace,
+
                     /// LANGUAGE AND LOCATION
                     Text(
                       "${jobOffer.language} • ${jobOffer.location}",
                       style: AppFonts.bodyS.copyWith(),
                     ),
                     20.0.verticalSpace,
+
                     /// DESCRIPTION
                     Text(team.description),
                     20.0.verticalSpace,
                     Text("Team members' hobbies",
-                        style: AppFonts.h3.copyWith()
-                    ),
+                        style: AppFonts.h3.copyWith()),
                     10.0.verticalSpace,
 
                     /// HOBBIES
@@ -114,9 +121,7 @@ class TeamPage extends GetView<DataController> {
                     20.0.verticalSpace,
 
                     /// COMPANY VALUES
-                    Text("Company values",
-                        style: AppFonts.h3.copyWith()
-                    ),
+                    Text("Company values", style: AppFonts.h3.copyWith()),
                     10.0.verticalSpace,
                     Wrap(
                       spacing: 8.0,
@@ -148,6 +153,23 @@ class TeamPage extends GetView<DataController> {
             ]),
           ),
         ],
+      ),
+      floatingActionButton: Container(
+        width: 200.0,
+        child: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: AppColors.purpleText,
+          shape: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(24.0),
+            borderSide: BorderSide.none,
+          ),
+          child: Text(
+            "Apply",
+            style: AppFonts.actionL.copyWith(
+              color: AppColors.white,
+            ),
+          ),
+        ),
       ),
     );
   }
