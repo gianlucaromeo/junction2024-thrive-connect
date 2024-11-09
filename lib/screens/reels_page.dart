@@ -78,7 +78,15 @@ class ReelsPage extends GetView<DataController> {
                       log("Job Offer: ${jobOffer.title}");
                       final team = controller.getTeamFromJobOffer(jobOffer);
                       final employees = controller.getEmployeesFromTeam(team);
-                      final hobbies = employees.map((e) => controller.getHobby(e.hobbyIds.first)).toList();
+                      final hobbies = employees
+                          .map((e) => controller.getHobby(e.hobbyIds.first))
+                          .toList();
+                      final company =
+                          controller.getCompanyFromJobOffer(jobOffer);
+                      final companyValues = company.valueIds
+                          .take(2)
+                          .map((e) => controller.getCompanyValue(e))
+                          .toList();
                       return Stack(
                         children: [
                           Container(
@@ -107,28 +115,70 @@ class ReelsPage extends GetView<DataController> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Wrap(
-                                              spacing: 12.0,
-                                              children: hobbies
-                                                  .map(
-                                                    (hobby) => Container(
-                                                      padding: const EdgeInsets.symmetric(
-                                                        horizontal: 24.0,
-                                                        vertical: 12.0,
-                                                      ),
-                                                      decoration: BoxDecoration(
-                                                        color: AppColors.greenPastel,
-                                                        borderRadius: BorderRadius.circular(16.0),
-                                                      ),
-                                                      child: Text(
-                                                        hobby.name,
-                                                        style: AppFonts.actionL.copyWith(
-                                                          color: AppColors.greenText,
+                                                spacing: 12.0,
+                                                runSpacing: 12.0,
+                                                children: [
+                                                  ...hobbies
+                                                      .map(
+                                                        (hobby) => Container(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .symmetric(
+                                                            horizontal: 24.0,
+                                                            vertical: 12.0,
+                                                          ),
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: AppColors
+                                                                .greenPastel,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        16.0),
+                                                          ),
+                                                          child: Text(
+                                                            hobby.name,
+                                                            style: AppFonts
+                                                                .actionL
+                                                                .copyWith(
+                                                              color: AppColors
+                                                                  .greenText,
+                                                            ),
+                                                          ),
                                                         ),
-                                                      ),
-                                                    ),
-                                                  )
-                                                  .toList(),
-                                            ),
+                                                      )
+                                                      .toList(),
+                                                  ...companyValues
+                                                      .map(
+                                                        (hobby) => Container(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .symmetric(
+                                                            horizontal: 24.0,
+                                                            vertical: 12.0,
+                                                          ),
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: AppColors
+                                                                .redPastel,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        16.0),
+                                                          ),
+                                                          child: Text(
+                                                            hobby.name,
+                                                            style: AppFonts
+                                                                .actionL
+                                                                .copyWith(
+                                                              color: AppColors
+                                                                  .redText,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      )
+                                                      .toList(),
+                                                ]),
                                             10.0.verticalSpace,
                                             Text(
                                               jobOffer.title,
@@ -153,8 +203,8 @@ class ReelsPage extends GetView<DataController> {
                                       Column(
                                         children: [
                                           IconButton(
-                                            icon:
-                                                const Icon(Icons.favorite_border),
+                                            icon: const Icon(
+                                                Icons.favorite_border),
                                             color: Colors.white,
                                             onPressed: () {
                                               // TODO

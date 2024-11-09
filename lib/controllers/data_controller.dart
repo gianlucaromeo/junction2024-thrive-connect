@@ -30,6 +30,12 @@ class DataController extends GetxController {
     return companies.firstWhere((company) => company.id == team.companyId);
   }
 
+  CompanyValue getCompanyValue(String companyValueId) {
+    return companyValues.firstWhere((companyValue) {
+      return companyValue.id == companyValueId;
+    });
+  }
+
   List<Employee> getEmployeesFromTeam(Team team) {
     return employees.where((employee) {
       return employee.teamIds.contains(team.id);
@@ -51,15 +57,17 @@ class DataController extends GetxController {
       final team = getTeamFromJobOffer(jobOffer);
       final company = getCompanyFromJobOffer(jobOffer);
       final employees = getEmployeesFromTeam(team);
-      final hobbies = employees.map((employee) =>
-          employee.hobbyIds.map((hobbyId) => getHobby(hobbyId)).toList())
+      final hobbies = employees
+          .map((employee) =>
+              employee.hobbyIds.map((hobbyId) => getHobby(hobbyId)).toList())
           .toList();
 
       return team.name.toLowerCase().contains(filter) ||
           company.name.toLowerCase().contains(filter) ||
           jobOffer.title.toLowerCase().contains(filter) ||
           jobOffer.description.toLowerCase().contains(filter) ||
-          hobbies.any((hobby) => hobby.any((hobby) => hobby.name.toLowerCase().contains(filter)));
+          hobbies.any((hobby) =>
+              hobby.any((hobby) => hobby.name.toLowerCase().contains(filter)));
     }).toList();
 
     if (filteredOffers.isEmpty) {
