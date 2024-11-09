@@ -125,6 +125,7 @@ class Company {
     'valueIds': valueIds,
   };
 }
+
 class JobSeeker {
   final String id;
   final String status;
