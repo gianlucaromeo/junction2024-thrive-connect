@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:junction2024_thrive_connect/controllers/data_controller.dart';
 import 'package:junction2024_thrive_connect/controllers/navigation_controller.dart';
 import 'package:junction2024_thrive_connect/extensions.dart';
 import 'package:junction2024_thrive_connect/ui.dart';
 import 'package:junction2024_thrive_connect/widgets/app_bottom_bar.dart';
 import 'package:tiktoklikescroller/tiktoklikescroller.dart';
 
-class ReelsPage extends StatelessWidget {
-  const ReelsPage({super.key});
+class ReelsPage extends GetView<DataController> {
+  ReelsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +27,20 @@ class ReelsPage extends StatelessWidget {
           child: Stack(
             children: [
               TikTokStyleFullPageScroller(
-                contentSize: 10,
+                contentSize: controller.teams.length,
                 builder: (context, index) {
                   return Container(
                     color: Colors.primaries[index % Colors.primaries.length],
                     child: Stack(
                       children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(controller.teams[index].img),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
                         Positioned(
                           bottom: 0.0,
                           left: 0.0,

@@ -24,14 +24,54 @@
     { "id": "10", "name": "Music" }
   ],
   "Teams": [
-    { "id": "1", "name": "Engineering Team", "companyId": "1" },
-    { "id": "2", "name": "Marketing Team", "companyId": "2" },
-    { "id": "3", "name": "Product Development", "companyId": "1" },
-    { "id": "4", "name": "Human Resources", "companyId": "3" },
-    { "id": "5", "name": "Design Team", "companyId": "2" },
-    { "id": "6", "name": "Sales Team", "companyId": "3" },
-    { "id": "7", "name": "Customer Support", "companyId": "4" },
-    { "id": "8", "name": "R&D Team", "companyId": "4" }
+    {
+      "id": "1",
+      "name": "Engineering Team",
+      "companyId": "1",
+      "img": "/images/annie-spratt-dWYU3i-mqEo-unsplash.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Marketing Team",
+      "companyId": "2",
+      "img": "/images/brooke-cagle--uHVRvDr7pg-unsplash.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Product Development",
+      "companyId": "1",
+      "img": "/images/desola-lanre-ologun-IgUR1iX0mqM-unsplash.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Human Resources",
+      "companyId": "3",
+      "img": "/images/helena-lopes-PGnqT0rXWLs-unsplash.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Design Team",
+      "companyId": "2",
+      "img": "/images/jason-goodman-Ti7LQ0r-zy4-unsplash.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Sales Team",
+      "companyId": "3",
+      "img": "/images/jose-aljovin-JZMdGltAHMo-unsplash.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Customer Support",
+      "companyId": "4",
+      "img": "/images/kobu-agency-7okkFhxrxNw-unsplash.jpg"
+    },
+    {
+      "id": "8",
+      "name": "R&D Team",
+      "companyId": "4",
+      "img": "/images/mimi-thian-vdXMSiX-n6M-unsplash.jpg"
+    }
   ],
   "JobOffer": [
     {

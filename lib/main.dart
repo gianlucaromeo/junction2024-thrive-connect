@@ -39,7 +39,7 @@ class MainApp extends StatelessWidget {
       getPages: [
         GetPage(
           name: '/reels',
-          page: () => const ReelsPage(),
+          page: () => ReelsPage(),
           transition: Transition.noTransition,
         ),
         GetPage(
