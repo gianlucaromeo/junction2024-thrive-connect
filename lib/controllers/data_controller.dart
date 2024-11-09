@@ -14,6 +14,8 @@ class DataController extends GetxController {
   List<JobSeeker> jobSeekers = [];
   List<Employee> employees = [];
 
+  RxList<JobOffer> filteredJobOffers = <JobOffer>[].obs;
+
   JobOffer getJobOffersForTeam(int teamId) {
     return jobOffers
         .firstWhere((jobOffer) => jobOffer.teamId == teamId.toString());
@@ -36,6 +38,35 @@ class DataController extends GetxController {
 
   Hobby getHobby(String hobbyId) {
     return hobbies.firstWhere((hobby) => hobby.id == hobbyId);
+  }
+
+  void applyFilter(String text) {
+    final filter = text.toLowerCase();
+
+    if (filter.isEmpty) {
+      filteredJobOffers.value = jobOffers;
+    }
+
+    final filteredOffers = jobOffers.where((jobOffer) {
+      final team = getTeamFromJobOffer(jobOffer);
+      final company = getCompanyFromJobOffer(jobOffer);
+      final employees = getEmployeesFromTeam(team);
+      final hobbies = employees.map((employee) =>
+          employee.hobbyIds.map((hobbyId) => getHobby(hobbyId)).toList())
+          .toList();
+
+      return team.name.toLowerCase().contains(filter) ||
+          company.name.toLowerCase().contains(filter) ||
+          jobOffer.title.toLowerCase().contains(filter) ||
+          jobOffer.description.toLowerCase().contains(filter) ||
+          hobbies.any((hobby) => hobby.any((hobby) => hobby.name.toLowerCase().contains(filter)));
+    }).toList();
+
+    if (filteredOffers.isEmpty) {
+      filteredJobOffers.value = jobOffers;
+    } else {
+      filteredJobOffers.value = filteredOffers;
+    }
   }
 
   Future<void> loadData() async {
@@ -65,6 +96,8 @@ class DataController extends GetxController {
           .map((json) => Employee.fromJson(json))
           .toList();
       log("Data loaded successfully");
+
+      filteredJobOffers.value = jobOffers;
     } catch (e) {
       log("Error loading data: $e");
     }

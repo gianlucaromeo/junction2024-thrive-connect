@@ -69,115 +69,117 @@ class ReelsPage extends GetView<DataController> {
                     end: Alignment.topCenter,
                   ),
                 ),
-                child: TikTokStyleFullPageScroller(
-                  controller: scrollerController,
-                  contentSize: controller.jobOffers.length,
-                  builder: (context, index) {
-                    final jobOffer = controller.jobOffers[index];
-                    final team = controller.getTeamFromJobOffer(jobOffer);
-                    final employees = controller.getEmployeesFromTeam(team);
-                    final hobbies = employees.map((e) => controller.getHobby(e.hobbyIds.first)).toList();
-                    return Stack(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(controller.teams[index].img),
-                              fit: BoxFit.cover,
+                child: Obx(
+                  () => TikTokStyleFullPageScroller(
+                    controller: scrollerController,
+                    contentSize: controller.filteredJobOffers.length,
+                    builder: (context, index) {
+                      final jobOffer = controller.filteredJobOffers[index];
+                      final team = controller.getTeamFromJobOffer(jobOffer);
+                      final employees = controller.getEmployeesFromTeam(team);
+                      final hobbies = employees.map((e) => controller.getHobby(e.hobbyIds.first)).toList();
+                      return Stack(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(controller.teams[index].img),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                        Positioned(
-                          bottom: 0.0,
-                          left: 0.0,
-                          right: 0.0,
-                          child: Container(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    /// HOBBIES, TITLE, AND DESCRIPTION
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Wrap(
-                                            spacing: 12.0,
-                                            children: hobbies
-                                                .map(
-                                                  (hobby) => Container(
-                                                    padding: const EdgeInsets.symmetric(
-                                                      horizontal: 24.0,
-                                                      vertical: 12.0,
-                                                    ),
-                                                    decoration: BoxDecoration(
-                                                      color: AppColors.greenPastel,
-                                                      borderRadius: BorderRadius.circular(16.0),
-                                                    ),
-                                                    child: Text(
-                                                      hobby.name,
-                                                      style: AppFonts.actionL.copyWith(
-                                                        color: AppColors.greenText,
+                          Positioned(
+                            bottom: 0.0,
+                            left: 0.0,
+                            right: 0.0,
+                            child: Container(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      /// HOBBIES, TITLE, AND DESCRIPTION
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Wrap(
+                                              spacing: 12.0,
+                                              children: hobbies
+                                                  .map(
+                                                    (hobby) => Container(
+                                                      padding: const EdgeInsets.symmetric(
+                                                        horizontal: 24.0,
+                                                        vertical: 12.0,
+                                                      ),
+                                                      decoration: BoxDecoration(
+                                                        color: AppColors.greenPastel,
+                                                        borderRadius: BorderRadius.circular(16.0),
+                                                      ),
+                                                      child: Text(
+                                                        hobby.name,
+                                                        style: AppFonts.actionL.copyWith(
+                                                          color: AppColors.greenText,
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                )
-                                                .toList(),
-                                          ),
-                                          10.0.verticalSpace,
-                                          Text(
-                                            jobOffer.title,
-                                            style: AppFonts.h1.copyWith(
-                                              color: Colors.white,
+                                                  )
+                                                  .toList(),
                                             ),
-                                          ),
-                                          10.0.verticalSpace,
-                                          Text(
-                                            jobOffer.description,
-                                            style: AppFonts.bodyL.copyWith(
-                                              color: Colors.white,
+                                            10.0.verticalSpace,
+                                            Text(
+                                              jobOffer.title,
+                                              style: AppFonts.h1.copyWith(
+                                                color: Colors.white,
+                                              ),
                                             ),
-                                            maxLines: 3,
-                                            overflow: TextOverflow.ellipsis,
+                                            10.0.verticalSpace,
+                                            Text(
+                                              jobOffer.description,
+                                              style: AppFonts.bodyL.copyWith(
+                                                color: Colors.white,
+                                              ),
+                                              maxLines: 3,
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+
+                                      /// ACTIONS
+                                      Column(
+                                        children: [
+                                          IconButton(
+                                            icon:
+                                                const Icon(Icons.favorite_border),
+                                            color: Colors.white,
+                                            onPressed: () {
+                                              // TODO
+                                            },
+                                          ),
+                                          IconButton(
+                                            icon: const Icon(
+                                                Icons.navigate_next_outlined),
+                                            color: Colors.white,
+                                            onPressed: () {
+                                              // TODO
+                                            },
                                           ),
                                         ],
                                       ),
-                                    ),
-
-                                    /// ACTIONS
-                                    Column(
-                                      children: [
-                                        IconButton(
-                                          icon:
-                                              const Icon(Icons.favorite_border),
-                                          color: Colors.white,
-                                          onPressed: () {
-                                            // TODO
-                                          },
-                                        ),
-                                        IconButton(
-                                          icon: const Icon(
-                                              Icons.navigate_next_outlined),
-                                          color: Colors.white,
-                                          onPressed: () {
-                                            // TODO
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                                110.0.verticalSpace,
-                              ],
+                                    ],
+                                  ),
+                                  110.0.verticalSpace,
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    );
-                  },
+                        ],
+                      );
+                    },
+                  ),
                 ),
               ),
               // Fixed Search Bar
@@ -212,6 +214,9 @@ class ReelsPage extends GetView<DataController> {
                         borderSide: BorderSide.none,
                       ),
                     ),
+                    onChanged: (value) {
+                      controller.applyFilter(value);
+                    },
                   ),
                 ),
               ),
