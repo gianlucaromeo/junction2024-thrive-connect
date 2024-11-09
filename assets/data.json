@@ -125,7 +125,7 @@
       "valueIds": ["9", "10", "6"]
     }
   ],
-  "JobSeeker": [
+  "Employee": [
     {
       "id": "1",
       "status": "Active",
@@ -135,6 +135,7 @@
       "hobbyIds": ["1", "2"],
       "valueIds": ["1", "4"],
       "teamIds": ["1", "3"],
+      "role": "Data Scientist",
       "workStyle": "Hybrid"
     },
     {
@@ -146,6 +147,7 @@
       "hobbyIds": ["3", "4", "5"],
       "valueIds": ["3", "5"],
       "teamIds": ["2"],
+      "role": "Manager",
       "workStyle": "Remote"
     },
     {
@@ -157,6 +159,7 @@
       "hobbyIds": ["7", "8"],
       "valueIds": ["6", "8"],
       "teamIds": ["6"],
+      "role": "HR",
       "workStyle": "Flexible"
     },
     {
@@ -168,6 +171,7 @@
       "hobbyIds": ["9", "10"],
       "valueIds": ["9", "10"],
       "teamIds": ["7"],
+      "role": "Software Engineer",
       "workStyle": "Remote"
     },
     {
@@ -179,10 +183,11 @@
       "hobbyIds": ["2", "6"],
       "valueIds": ["7", "5"],
       "teamIds": ["8"],
+      "role": "DevOps",
       "workStyle": "On-site"
     }
   ],
-  "Employee": [
+  "JobSeeker": [
     {
       "id": "1",
       "status": "Employed",

@@ -184,6 +184,7 @@ class Employee {
   final List<String> valueIds;
   final List<String> likedTeamIds;
   final List<String> likedCompanyIds;
+  final String role;
   final String workStyle;
 
   Employee({
@@ -196,6 +197,7 @@ class Employee {
     required this.valueIds,
     required this.likedTeamIds,
     required this.likedCompanyIds,
+    required this.role,
     required this.workStyle,
   });
 
@@ -209,6 +211,7 @@ class Employee {
         valueIds: List<String>.from(json['valueIds'] ?? []),
         likedTeamIds: List<String>.from(json['likedTeamIds'] ?? []),
         likedCompanyIds: List<String>.from(json['likedCompanyIds'] ?? []),
+        role: json['role'],
         workStyle: json['workStyle'],
       );
 
