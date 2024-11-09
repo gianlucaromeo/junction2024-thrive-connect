@@ -5,6 +5,7 @@ import 'package:junction2024_thrive_connect/controllers/navigation_controller.da
 import 'package:junction2024_thrive_connect/screens/favorites_page.dart';
 import 'package:junction2024_thrive_connect/screens/reels_page.dart';
 import 'package:junction2024_thrive_connect/screens/profile_page.dart';
+import 'package:junction2024_thrive_connect/screens/start_page.dart';
 import 'package:junction2024_thrive_connect/screens/team_page.dart';
 import 'package:junction2024_thrive_connect/ui.dart';
 
@@ -39,6 +40,11 @@ class MainApp extends StatelessWidget {
       ),
       getPages: [
         GetPage(
+          name: '/start',
+          page: () => StartPage(),
+          transition: Transition.noTransition,
+        ),
+        GetPage(
           name: '/favorites',
           page: () => FavoritesPage(),
           transition: Transition.noTransition,
@@ -59,7 +65,7 @@ class MainApp extends StatelessWidget {
           transition: Transition.rightToLeftWithFade,
         ),
       ],
-      initialRoute: '/reels',
+      initialRoute: '/start',
     );
   }
 }

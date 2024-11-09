@@ -6,6 +6,7 @@ class NavigationController {
     '/reels', // 1
     '/profile', // 2
     '/team', // 3
+    '/start', // 5
   ];
 
   int _currentIndex = 1;
