@@ -44,7 +44,7 @@ class MainApp extends StatelessWidget {
         ),
         GetPage(
           name: '/profile',
-          page: () => const ProfilePage(),
+          page: () => ProfilePage(),
           transition: Transition.noTransition,
         ),
         GetPage(
