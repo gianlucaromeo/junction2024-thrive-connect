@@ -241,3 +241,19 @@ class JobSeeker {
         'workStyle': workStyle,
       };
 }
+
+class Favorites {
+  final List<String> jobOfferIds;
+
+  Favorites({
+    required this.jobOfferIds,
+  });
+
+  factory Favorites.fromJson(Map<String, dynamic> json) => Favorites(
+    jobOfferIds: List<String>.from(json['jobOfferIds'] ?? []),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'jobOfferIds': jobOfferIds,
+  };
+}

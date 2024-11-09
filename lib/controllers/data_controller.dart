@@ -13,6 +13,9 @@ class DataController extends GetxController {
   List<Company> companies = [];
   List<JobSeeker> jobSeekers = [];
   List<Employee> employees = [];
+  Favorites favorites = Favorites(jobOfferIds: ["1"]);
+
+  RxList<String> favoriteJobOfferIds = <String>[].obs;
 
   RxList<JobOffer> filteredJobOffers = <JobOffer>[].obs;
 
@@ -36,6 +39,11 @@ class DataController extends GetxController {
     });
   }
 
+  JobOffer getJobOffer(String jobOfferId) {
+    log("jobOfferId: $jobOfferId");
+    return jobOffers.firstWhere((jobOffer) => jobOffer.id == jobOfferId);
+  }
+
   List<Employee> getEmployeesFromTeam(Team team) {
     return employees.where((employee) {
       return employee.teamIds.contains(team.id);
@@ -49,6 +57,18 @@ class DataController extends GetxController {
   CompanyValue getValues(String valueID) {
     return companyValues
         .firstWhere((companyValue) => companyValue.id == valueID);
+  }
+
+  bool isFavoriteJobOffer(JobOffer jobOffer) {
+    return favoriteJobOfferIds.contains(jobOffer.id);
+  }
+
+  void toggleFavoriteJobOffer(JobOffer jobOffer) {
+    if (isFavoriteJobOffer(jobOffer)) {
+      favoriteJobOfferIds.remove(jobOffer.id);
+    } else {
+      favoriteJobOfferIds.add(jobOffer.id);
+    }
   }
 
   void applyFilter(String text) {
@@ -108,7 +128,7 @@ class DataController extends GetxController {
       employees = (data['Employee'] as List)
           .map((json) => Employee.fromJson(json))
           .toList();
-      log("Data loaded successfully");
+      favorites = Favorites.fromJson(data['Favorites']);
 
       filteredJobOffers.value = jobOffers;
     } catch (e) {

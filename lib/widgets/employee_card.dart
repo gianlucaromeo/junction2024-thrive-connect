@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:junction2024_thrive_connect/controllers/data_controller.dart';
+import 'package:junction2024_thrive_connect/extensions.dart';
 import 'package:junction2024_thrive_connect/models.dart';
 import 'dart:ui';
 
@@ -25,10 +26,8 @@ class EmployeeCard extends GetView<DataController> {
         .toList();
 
     return Card(
-      margin: EdgeInsets.all(27),
-      elevation: 5,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(32),
       ),
       child: GestureDetector(
         onTap: () {
@@ -37,11 +36,11 @@ class EmployeeCard extends GetView<DataController> {
         child: Stack(
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: Image.network(
+              borderRadius: BorderRadius.circular(32),
+              child: Image.asset(
                 employee.img,
                 width: double.infinity,
-                height: 350,
+                height: 275.0,
                 fit: BoxFit.cover,
               ),
             ),
@@ -50,11 +49,11 @@ class EmployeeCard extends GetView<DataController> {
               left: 0,
               right: 0,
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(24),
                 child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                  filter: ImageFilter.blur(sigmaX: 50, sigmaY: 80),
                   child: Container(
-                    padding: EdgeInsets.all(10),
+                    padding: 20.0.paddingAll,
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.37),
                     ),
@@ -65,20 +64,21 @@ class EmployeeCard extends GetView<DataController> {
                               children: [
                                 Text(
                                   '${employee.firstName} ${employee.lastName}',
-                                  style: const TextStyle(
+                                  style: AppFonts.h1.copyWith(
                                     color: Colors.black,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
+                                6.0.verticalSpace,
                                 Text(
                                   employee.workStyle,
-                                  style: const TextStyle(
+                                  style: AppFonts.bodyS.copyWith(
                                     color: Colors.black54,
-                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
                                   ),
+                                  maxLines: 3,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
-                                const SizedBox(height: 8.0),
+                                20.0.verticalSpace,
 
                                 //TAGS
                                 Wrap(spacing: 8.0, runSpacing: 8.0, children: [

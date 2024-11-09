@@ -11,48 +11,50 @@ class AppBottomBar extends GetView<NavigationController> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Container(
-        decoration: BoxDecoration(
-          color: AppColors.black,
-          borderRadius: BorderRadius.circular(32.0),
+    return Container(
+      decoration: BoxDecoration(
+        color: AppColors.black,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(32.0),
+          topRight: Radius.circular(32.0),
         ),
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20.0,
-          vertical: 12.0,
-        ),
-        child: BottomNavigationBar(
-          currentIndex: controller.currentIndex,
-          onTap: controller.setCurrentIndex,
-          backgroundColor: Colors.transparent,
-          elevation: 0.0,
-          /// SELECTED
-          selectedIconTheme: IconThemeData(color: AppColors.purplePastel), // TODO Change
-          selectedLabelStyle: AppFonts.actionS,
-          //selectedItemColor: AppColors.neutralDarkDarkest,
-          /// UNSELECTED
-          unselectedIconTheme: IconThemeData(color: AppColors.grey),
-          unselectedLabelStyle: AppFonts.bodyXS,
-          //unselectedItemColor: AppColors.neutralDarkLight,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          iconSize: 32.0,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_border_outlined),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline),
-              label: "",
-            ),
-          ],
-        ),
+      ),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20.0,
+        vertical: 12.0,
+      ),
+      child: BottomNavigationBar(
+        currentIndex: controller.currentIndex,
+        onTap: controller.setCurrentIndex,
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+
+        /// SELECTED
+        selectedIconTheme: IconThemeData(color: AppColors.purplePastel),
+        // TODO Change
+        selectedLabelStyle: AppFonts.actionS,
+        //selectedItemColor: AppColors.neutralDarkDarkest,
+        /// UNSELECTED
+        unselectedIconTheme: IconThemeData(color: AppColors.grey),
+        unselectedLabelStyle: AppFonts.bodyXS,
+        //unselectedItemColor: AppColors.neutralDarkLight,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        iconSize: 32.0,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite_border_outlined),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            label: "",
+          ),
+        ],
       ),
     );
   }

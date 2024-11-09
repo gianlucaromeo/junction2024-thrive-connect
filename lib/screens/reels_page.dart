@@ -222,7 +222,7 @@ class ReelsPage extends GetView<DataController> {
                                       ),
                                     ],
                                   ),
-                                  110.0.verticalSpace,
+                                  90.0.verticalSpace,
                                 ],
                               ),
                             ),
