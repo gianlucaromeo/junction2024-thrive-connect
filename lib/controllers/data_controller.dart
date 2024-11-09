@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:get/get.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
@@ -14,7 +16,7 @@ class DataController extends GetxController {
 
   Future<void> loadData() async {
     try {
-      final String response = await rootBundle.loadString('data.json');
+      final String response = await rootBundle.loadString('assets/data.json');
 
       final data = json.decode(response);
 
@@ -38,8 +40,9 @@ class DataController extends GetxController {
       employees = (data['Employee'] as List)
           .map((json) => Employee.fromJson(json))
           .toList();
+      log("Data loaded successfully");
     } catch (e) {
-      print("Error loading data: $e");
+      log("Error loading data: $e");
     }
   }
 }
