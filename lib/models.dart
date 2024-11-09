@@ -201,6 +201,8 @@ class JobSeeker {
   final List<String> likedTeamIds;
   final List<String> likedCompanyIds;
   final String workStyle;
+  final String role;
+  final String img;
 
   JobSeeker({
     required this.id,
@@ -213,6 +215,8 @@ class JobSeeker {
     required this.likedTeamIds,
     required this.likedCompanyIds,
     required this.workStyle,
+    required this.role,
+    required this.img,
   });
 
   factory JobSeeker.fromJson(Map<String, dynamic> json) => JobSeeker(
@@ -226,6 +230,8 @@ class JobSeeker {
         likedTeamIds: List<String>.from(json['likedTeamIds'] ?? []),
         likedCompanyIds: List<String>.from(json['likedCompanyIds'] ?? []),
         workStyle: json['workStyle'],
+        role: json['role'],
+        img: json['img'],
       );
 
   Map<String, dynamic> toJson() => {
@@ -239,6 +245,8 @@ class JobSeeker {
         'likedTeamIds': likedTeamIds,
         'likedCompanyIds': likedCompanyIds,
         'workStyle': workStyle,
+        'role': role,
+        'img': img,
       };
 }
 
@@ -250,10 +258,10 @@ class Favorites {
   });
 
   factory Favorites.fromJson(Map<String, dynamic> json) => Favorites(
-    jobOfferIds: List<String>.from(json['jobOfferIds'] ?? []),
-  );
+        jobOfferIds: List<String>.from(json['jobOfferIds'] ?? []),
+      );
 
   Map<String, dynamic> toJson() => {
-    'jobOfferIds': jobOfferIds,
-  };
+        'jobOfferIds': jobOfferIds,
+      };
 }
