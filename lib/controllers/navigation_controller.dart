@@ -8,6 +8,7 @@ class NavigationController {
     '/team', // 3
     '/job', // 4
     '/start', // 5
+    '/applicationSent', // 6
   ];
 
   int _currentIndex = 1;
