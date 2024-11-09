@@ -75,6 +75,7 @@ class ReelsPage extends GetView<DataController> {
                     contentSize: controller.filteredJobOffers.length,
                     builder: (context, index) {
                       final jobOffer = controller.filteredJobOffers[index];
+                      log("Job Offer: ${jobOffer.title}");
                       final team = controller.getTeamFromJobOffer(jobOffer);
                       final employees = controller.getEmployeesFromTeam(team);
                       final hobbies = employees.map((e) => controller.getHobby(e.hobbyIds.first)).toList();
@@ -83,7 +84,7 @@ class ReelsPage extends GetView<DataController> {
                           Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: AssetImage(controller.teams[index].img),
+                                image: AssetImage(team.img),
                                 fit: BoxFit.cover,
                               ),
                             ),
