@@ -20,19 +20,18 @@ class StartPage extends StatelessWidget {
           Positioned.fill(
             child: Stack(
               children: [
-                Center(
-                  child: Image.asset('assets/images/brand/blob.gif',
-                      fit: BoxFit.cover),
-                ),
                 Positioned.fill(
                   child: BackdropFilter(
                     filter: ImageFilter.blur(
                         sigmaX: 2.0, sigmaY: 2.0), // Adjust blur intensity
                     child: Container(
-                      color: Colors.black.withOpacity(
-                          0), // Transparent overlay for blurring only
+                      color: AppColors.orange,
                     ),
                   ),
+                ),
+                Center(
+                  child: Image.asset('assets/images/brand/blob.gif',
+                      fit: BoxFit.cover),
                 ),
               ],
             ),
@@ -59,7 +58,7 @@ class StartPage extends StatelessWidget {
                       SizedBox(
                         width: 300,
                         child: Text(
-                          'Discover your perfect Team with fitting Values!',
+                          'Swipe teams,\nfind jobs.',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 24,

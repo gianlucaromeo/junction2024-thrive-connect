@@ -14,7 +14,7 @@ class AppBottomBar extends GetView<NavigationController> {
     return Container(
       decoration: BoxDecoration(
         color: AppColors.black,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(32.0),
           topRight: Radius.circular(32.0),
         ),
@@ -30,7 +30,7 @@ class AppBottomBar extends GetView<NavigationController> {
         elevation: 0.0,
 
         /// SELECTED
-        selectedIconTheme: IconThemeData(color: AppColors.purplePastel),
+        selectedIconTheme: IconThemeData(color: AppColors.orange),
         // TODO Change
         selectedLabelStyle: AppFonts.actionS,
         //selectedItemColor: AppColors.neutralDarkDarkest,
@@ -43,7 +43,7 @@ class AppBottomBar extends GetView<NavigationController> {
         iconSize: 32.0,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border_outlined),
+            icon: Icon(Icons.bookmark_outlined),
             label: "",
           ),
           BottomNavigationBarItem(
