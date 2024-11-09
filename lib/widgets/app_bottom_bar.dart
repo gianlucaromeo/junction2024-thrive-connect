@@ -25,12 +25,8 @@ class AppBottomBar extends GetView<NavigationController> {
       unselectedItemColor: AppColors.neutralDarkLight,
       items: const [
         BottomNavigationBarItem(
-          icon: SizedBox(child: Icon(Icons.library_books)),
-          label: "Learn",
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.edit_outlined),
-          label: "Practice",
+          icon: Icon(Icons.play_circle_outline_outlined),
+          label: "Teams",
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person_outline),
