@@ -12,78 +12,78 @@ class ApplicationSentPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.greenPastel,
-      body: Stack(
-        children: [
-          // Blurred Background Image
-          Positioned.fill(
-            child: Stack(
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: AppColors.orange,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Stack(
               children: [
-                Center(
-                  child: Image.asset(
-                    'assets/images/brand/blob.gif',
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Positioned.fill(
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
-                    child: Container(color: Colors.black.withOpacity(0)),
+                // Blurred Background Image
+
+                // Foreground Content
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 80.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        children: [
+                          50.0.verticalSpace,
+                          Text(
+                            'Job Application Sent!',
+                            textAlign: TextAlign.center,
+                            style: AppFonts.h1.copyWith(
+                              color: Colors.white,
+                            ),
+                            maxLines: 3,
+                          ),
+                          10.0.verticalSpace,
+                          Text(
+                            'Well done, keep up with it and find your perfect Team!',
+                            textAlign: TextAlign.center,
+                            style: AppFonts.bodyXL.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
+                          40.0.verticalSpace,
+                          Container(
+                            padding: 30.0.paddingAll,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: AppColors.white.withOpacity(0.7),
+                              ),
+                              borderRadius: BorderRadius.circular(200.0),
+                            ),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  Get.find<NavigationController>()
+                                      .setCurrentIndex(1);
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  // shape: CircleBorder(),
+                                  padding: 30.0.paddingAll,
+                                  backgroundColor: AppColors.black,
+                                ),
+                                child: Text(
+                                  "Let\'s\nswipe!",
+                                  style: AppFonts.bodyXL.copyWith(
+                                    color: AppColors.white,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                )),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
-          ),
-          // Foreground Content
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 80.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [
-                    50.0.verticalSpace,
-                    const Text(
-                      'Job Application Sent!',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                      ),
-                      maxLines: 3,
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Well done, keep up with it and find your perfect Team!',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.white,
-                      ),
-                      maxLines: 3,
-                    ),
-                    SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () {
-                        Get.find<NavigationController>().setCurrentIndex(1);
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(),
-                        padding: EdgeInsets.all(20),
-                        backgroundColor: AppColors.black,
-                      ),
-                      child: Icon(
-                        Icons.arrow_right_alt,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
