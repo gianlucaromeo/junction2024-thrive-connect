@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:junction2024_thrive_connect/controllers/data_controller.dart';
 import 'package:junction2024_thrive_connect/controllers/navigation_controller.dart';
 import 'package:junction2024_thrive_connect/screens/reels_page.dart';
 import 'package:junction2024_thrive_connect/screens/profile_page.dart';
@@ -10,6 +11,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   Get.put(NavigationController());
+  Get.put(DataController());
+
+  await Get.find<DataController>().loadData();
 
   setSystemUIOverlayColor(AppColors.neutralLightLightest);
 

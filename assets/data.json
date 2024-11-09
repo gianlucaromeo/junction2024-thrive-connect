@@ -1,5 +1,5 @@
 {
-  "Values": [
+  "CompanyValues": [
     {
       "id": "v1",
       "name": "Integrity"
@@ -84,30 +84,17 @@
       "valueIds": ["v2", "v3"]
     }
   ],
-  "JobSeeker": [
-    {
-      "id": "js1",
-      "status": "active",
-      "email": "seeker1@example.com",
-      "firstName": "Alice",
-      "lastName": "Johnson",
-      "hobbyIds": ["h1", "h3"],
-      "valueIds": ["v1"],
-      "teamIds": ["t1"],
-      "workStyle": "remote"
-    },
-    {
-      "id": "js2",
-      "status": "looking",
-      "email": "seeker2@example.com",
-      "firstName": "Bob",
-      "lastName": "Smith",
-      "hobbyIds": ["h2"],
-      "valueIds": ["v3"],
-      "teamIds": ["t2"],
-      "workStyle": "hybrid"
-    }
-  ],
+  "JobSeeker": {
+    "id": "js1",
+    "status": "active",
+    "email": "seeker1@example.com",
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "hobbyIds": ["h1", "h3"],
+    "valueIds": ["v1"],
+    "teamIds": ["t1"],
+    "workStyle": "remote"
+  },
   "Employee": [
     {
       "id": "e1",
