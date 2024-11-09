@@ -43,12 +43,14 @@ class Team {
   final String name;
   final String companyId;
   final String img;
+  final String description;
 
   Team({
     required this.id,
     required this.name,
     required this.companyId,
     required this.img,
+    required this.description,
   });
 
   factory Team.fromJson(Map<String, dynamic> json) => Team(
@@ -56,6 +58,7 @@ class Team {
         name: json['name'],
         companyId: json['companyId'],
         img: json['img'],
+        description: json['description'],
       );
 
   Map<String, dynamic> toJson() => {
@@ -63,6 +66,7 @@ class Team {
         'name': name,
         'companyId': companyId,
         'img': img,
+        'description': description,
       };
 }
 

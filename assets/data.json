@@ -28,49 +28,57 @@
       "id": "1",
       "name": "Engineering Team",
       "companyId": "1",
-      "img": "assets/images/annie-spratt-dWYU3i-mqEo-unsplash.jpg"
+      "img": "assets/images/annie-spratt-dWYU3i-mqEo-unsplash.jpg",
+      "description": "A group of curious minds constantly tinkering, solving puzzles, and building the next big thing, one line of code at a time!"
     },
     {
       "id": "2",
       "name": "Marketing Team",
       "companyId": "2",
-      "img": "assets/images/brooke-cagle--uHVRvDr7pg-unsplash.jpg"
+      "img": "assets/images/brooke-cagle--uHVRvDr7pg-unsplash.jpg",
+      "description": "Bursting with energy and fresh ideas, they know how to make waves with their creativity and keep everyone talking about us!"
     },
     {
       "id": "3",
       "name": "Product Development",
       "companyId": "1",
-      "img": "assets/images/desola-lanre-ologun-IgUR1iX0mqM-unsplash.jpg"
+      "img": "assets/images/desola-lanre-ologun-IgUR1iX0mqM-unsplash.jpg",
+      "description": "Visionary creators who live to shape products that delight our users and push boundaries, turning dreams into reality."
     },
     {
       "id": "4",
       "name": "Human Resources",
       "companyId": "3",
-      "img": "assets/images/helena-lopes-PGnqT0rXWLs-unsplash.jpg"
+      "img": "assets/images/helena-lopes-PGnqT0rXWLs-unsplash.jpg",
+      "description": "The friendly faces and empathetic hearts of our company, they’re all about creating a welcoming, positive workplace for everyone."
     },
     {
       "id": "5",
       "name": "Design Team",
       "companyId": "2",
-      "img": "assets/images/jason-goodman-Ti7LQ0r-zy4-unsplash.jpg"
+      "img": "assets/images/jason-goodman-Ti7LQ0r-zy4-unsplash.jpg",
+      "description": "Our artists and perfectionists, crafting beautiful designs with every detail polished to perfection. Style meets substance here!"
     },
     {
       "id": "6",
       "name": "Sales Team",
       "companyId": "3",
-      "img": "assets/images/jose-aljovin-JZMdGltAHMo-unsplash.jpg"
+      "img": "assets/images/jose-aljovin-JZMdGltAHMo-unsplash.jpg",
+      "description": "Driven go-getters who love a good challenge—they turn potential into partnerships and bring our products to life for clients."
     },
     {
       "id": "7",
       "name": "Customer Support",
       "companyId": "4",
-      "img": "assets/images/kobu-agency-7okkFhxrxNw-unsplash.jpg"
+      "img": "assets/images/kobu-agency-7okkFhxrxNw-unsplash.jpg",
+      "description": "Our problem-solvers with endless patience and empathy—they’re dedicated to making our customers’ lives easier, one call at a time."
     },
     {
       "id": "8",
       "name": "R&D Team",
       "companyId": "4",
-      "img": "assets/images/mimi-thian-vdXMSiX-n6M-unsplash.jpg"
+      "img": "assets/images/mimi-thian-vdXMSiX-n6M-unsplash.jpg",
+      "description": "Bold explorers on a mission to discover what’s next—they’re constantly experimenting with ideas to bring the future to the present."
     }
   ],
   "JobOffer": [
