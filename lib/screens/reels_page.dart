@@ -81,12 +81,12 @@ class ReelsPage extends GetView<DataController> {
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: TextField(
                     style: AppFonts.bodyL.copyWith(
-                      color: AppColors.neutralLightLightest,
+                      color: AppColors.grey,
                     ),
                     decoration: InputDecoration(
                       hintText: "Search",
                       hintStyle: AppFonts.bodyL.copyWith(
-                        color: AppColors.highlightsLightest,
+                        color: AppColors.grey,
                       ),
                       contentPadding: const EdgeInsets.symmetric(
                         horizontal: 24.0,
@@ -96,9 +96,9 @@ class ReelsPage extends GetView<DataController> {
                         padding: 24.0.paddingOnlyRight,
                         child: const Icon(Icons.search),
                       ),
-                      suffixIconColor: AppColors.highlightsLightest,
+                      suffixIconColor: AppColors.grey,
                       filled: true,
-                      fillColor: AppColors.neutralDarkDarkest,
+                      fillColor: AppColors.black,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(32.0),
                         borderSide: BorderSide.none,

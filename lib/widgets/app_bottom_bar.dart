@@ -15,7 +15,7 @@ class AppBottomBar extends GetView<NavigationController> {
       padding: const EdgeInsets.all(20.0),
       child: Container(
         decoration: BoxDecoration(
-          color: AppColors.neutralDarkDarkest,
+          color: AppColors.black,
           borderRadius: BorderRadius.circular(32.0),
         ),
         padding: const EdgeInsets.symmetric(
@@ -28,11 +28,11 @@ class AppBottomBar extends GetView<NavigationController> {
           backgroundColor: Colors.transparent,
           elevation: 0.0,
           /// SELECTED
-          selectedIconTheme: IconThemeData(color: AppColors.highlightsDarkest), // TODO Change
+          selectedIconTheme: IconThemeData(color: AppColors.purplePastel), // TODO Change
           selectedLabelStyle: AppFonts.actionS,
           //selectedItemColor: AppColors.neutralDarkDarkest,
           /// UNSELECTED
-          unselectedIconTheme: IconThemeData(color: AppColors.neutralDarkLight),
+          unselectedIconTheme: IconThemeData(color: AppColors.grey),
           unselectedLabelStyle: AppFonts.bodyXS,
           //unselectedItemColor: AppColors.neutralDarkLight,
           showSelectedLabels: false,

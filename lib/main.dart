@@ -16,7 +16,7 @@ void main() async {
 
   await Get.find<DataController>().loadData();
 
-  setSystemUIOverlayColor(AppColors.neutralLightLightest);
+  setSystemUIOverlayColor(AppColors.white);
 
   runApp(const MainApp());
 }
@@ -32,9 +32,9 @@ class MainApp extends StatelessWidget {
       theme: ThemeData().copyWith(
         textTheme: AppFonts.textTheme,
         textSelectionTheme: TextSelectionThemeData(
-          cursorColor: AppColors.highlightsDarkest,
-          selectionColor: AppColors.highlightsDarkest,
-          selectionHandleColor: AppColors.highlightsDarkest,
+          cursorColor: AppColors.purplePastel,
+          selectionColor: AppColors.purplePastel,
+          selectionHandleColor: AppColors.purplePastel,
         ),
       ),
       getPages: [
