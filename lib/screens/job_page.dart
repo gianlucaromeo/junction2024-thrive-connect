@@ -91,7 +91,7 @@ class JobPage extends GetView<DataController> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12.0),
                             color: index.isOdd
-                                ? AppColors.purpleText
+                                ? AppColors.purpleText  
                                 : AppColors.orange,
                           ),
                           child: Column(
