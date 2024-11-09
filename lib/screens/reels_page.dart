@@ -16,7 +16,11 @@ class ReelsPage extends GetView<DataController> {
       canPop: false,
       child: Scaffold(
         extendBody: true,
+        extendBodyBehindAppBar: true,
         resizeToAvoidBottomInset: false,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+        ),
         body: GestureDetector(
           onHorizontalDragUpdate: (details) {
             if (details.primaryDelta != null) {
@@ -59,10 +63,18 @@ class ReelsPage extends GetView<DataController> {
                               ),
                             ),
                             padding: const EdgeInsets.all(16.0),
-                            child: Text(
-                              "Page $index",
-                              style: AppFonts.h1.copyWith(
-                                color: Colors.white,
+                            child: Container(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Page $index",
+                                    style: AppFonts.h1.copyWith(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  125.0.verticalSpace,
+                                ],
                               ),
                             ),
                           ),
