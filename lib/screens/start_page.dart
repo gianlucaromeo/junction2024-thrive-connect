@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:junction2024_thrive_connect/controllers/navigation_controller.dart';
 import 'package:junction2024_thrive_connect/ui.dart';
 import 'dart:ui';
 
@@ -66,6 +68,7 @@ class StartPage extends StatelessWidget {
                       SizedBox(height: 20),
                       ElevatedButton(
                         onPressed: () {
+                          Get.find<NavigationController>().setCurrentIndex(1);
                           // Add your onPressed code here!
                         },
                         style: ElevatedButton.styleFrom(
