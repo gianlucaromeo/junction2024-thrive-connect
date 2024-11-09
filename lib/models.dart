@@ -1,21 +1,21 @@
-class Value {
+class CompanyValue {
   final String id;
   final String name;
 
-  Value({
+  CompanyValue({
     required this.id,
     required this.name,
   });
 
-  factory Value.fromJson(Map<String, dynamic> json) => Value(
-    id: json['id'],
-    name: json['name'],
-  );
+  factory CompanyValue.fromJson(Map<String, dynamic> json) => CompanyValue(
+        id: json['id'],
+        name: json['name'],
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-  };
+        'id': id,
+        'name': name,
+      };
 }
 
 class Hobby {
@@ -28,14 +28,14 @@ class Hobby {
   });
 
   factory Hobby.fromJson(Map<String, dynamic> json) => Hobby(
-    id: json['id'],
-    name: json['name'],
-  );
+        id: json['id'],
+        name: json['name'],
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-  };
+        'id': id,
+        'name': name,
+      };
 }
 
 class Team {
@@ -50,16 +50,16 @@ class Team {
   });
 
   factory Team.fromJson(Map<String, dynamic> json) => Team(
-    id: json['id'],
-    name: json['name'],
-    companyId: json['companyId'],
-  );
+        id: json['id'],
+        name: json['name'],
+        companyId: json['companyId'],
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-    'companyId': companyId,
-  };
+        'id': id,
+        'name': name,
+        'companyId': companyId,
+      };
 }
 
 class JobOffer {
@@ -80,22 +80,22 @@ class JobOffer {
   });
 
   factory JobOffer.fromJson(Map<String, dynamic> json) => JobOffer(
-    id: json['id'],
-    title: json['title'],
-    location: json['location'],
-    language: json['language'],
-    description: json['description'],
-    teamId: json['teamId'],
-  );
+        id: json['id'],
+        title: json['title'],
+        location: json['location'],
+        language: json['language'],
+        description: json['description'],
+        teamId: json['teamId'],
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'title': title,
-    'location': location,
-    'language': language,
-    'description': description,
-    'teamId': teamId,
-  };
+        'id': id,
+        'title': title,
+        'location': location,
+        'language': language,
+        'description': description,
+        'teamId': teamId,
+      };
 }
 
 class Company {
@@ -112,18 +112,18 @@ class Company {
   });
 
   factory Company.fromJson(Map<String, dynamic> json) => Company(
-    id: json['id'],
-    name: json['name'],
-    description: json['description'],
-    valueIds: List<String>.from(json['valueIds'] ?? []),
-  );
+        id: json['id'],
+        name: json['name'],
+        description: json['description'],
+        valueIds: List<String>.from(json['valueIds'] ?? []),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-    'description': description,
-    'valueIds': valueIds,
-  };
+        'id': id,
+        'name': name,
+        'description': description,
+        'valueIds': valueIds,
+      };
 }
 
 class JobSeeker {
@@ -150,28 +150,28 @@ class JobSeeker {
   });
 
   factory JobSeeker.fromJson(Map<String, dynamic> json) => JobSeeker(
-    id: json['id'],
-    status: json['status'],
-    email: json['email'],
-    firstName: json['firstName'],
-    lastName: json['lastName'],
-    hobbyIds: List<String>.from(json['hobbyIds'] ?? []),
-    valueIds: List<String>.from(json['valueIds'] ?? []),
-    teamIds: List<String>.from(json['teamIds'] ?? []),
-    workStyle: json['workStyle'],
-  );
+        id: json['id'],
+        status: json['status'],
+        email: json['email'],
+        firstName: json['firstName'],
+        lastName: json['lastName'],
+        hobbyIds: List<String>.from(json['hobbyIds'] ?? []),
+        valueIds: List<String>.from(json['valueIds'] ?? []),
+        teamIds: List<String>.from(json['teamIds'] ?? []),
+        workStyle: json['workStyle'],
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'status': status,
-    'email': email,
-    'firstName': firstName,
-    'lastName': lastName,
-    'hobbyIds': hobbyIds,
-    'valueIds': valueIds,
-    'teamIds': teamIds,
-    'workStyle': workStyle,
-  };
+        'id': id,
+        'status': status,
+        'email': email,
+        'firstName': firstName,
+        'lastName': lastName,
+        'hobbyIds': hobbyIds,
+        'valueIds': valueIds,
+        'teamIds': teamIds,
+        'workStyle': workStyle,
+      };
 }
 
 class Employee {
@@ -200,28 +200,28 @@ class Employee {
   });
 
   factory Employee.fromJson(Map<String, dynamic> json) => Employee(
-    id: json['id'],
-    status: json['status'],
-    email: json['email'],
-    firstName: json['firstName'],
-    lastName: json['lastName'],
-    hobbyIds: List<String>.from(json['hobbyIds'] ?? []),
-    valueIds: List<String>.from(json['valueIds'] ?? []),
-    likedTeamIds: List<String>.from(json['likedTeamIds'] ?? []),
-    likedCompanyIds: List<String>.from(json['likedCompanyIds'] ?? []),
-    workStyle: json['workStyle'],
-  );
+        id: json['id'],
+        status: json['status'],
+        email: json['email'],
+        firstName: json['firstName'],
+        lastName: json['lastName'],
+        hobbyIds: List<String>.from(json['hobbyIds'] ?? []),
+        valueIds: List<String>.from(json['valueIds'] ?? []),
+        likedTeamIds: List<String>.from(json['likedTeamIds'] ?? []),
+        likedCompanyIds: List<String>.from(json['likedCompanyIds'] ?? []),
+        workStyle: json['workStyle'],
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'status': status,
-    'email': email,
-    'firstName': firstName,
-    'lastName': lastName,
-    'hobbyIds': hobbyIds,
-    'valueIds': valueIds,
-    'likedTeamIds': likedTeamIds,
-    'likedCompanyIds': likedCompanyIds,
-    'workStyle': workStyle,
-  };
+        'id': id,
+        'status': status,
+        'email': email,
+        'firstName': firstName,
+        'lastName': lastName,
+        'hobbyIds': hobbyIds,
+        'valueIds': valueIds,
+        'likedTeamIds': likedTeamIds,
+        'likedCompanyIds': likedCompanyIds,
+        'workStyle': workStyle,
+      };
 }

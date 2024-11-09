@@ -1,0 +1,137 @@
+{
+  "Values": [
+    {
+      "id": "v1",
+      "name": "Integrity"
+    },
+    {
+      "id": "v2",
+      "name": "Creativity"
+    },
+    {
+      "id": "v3",
+      "name": "Teamwork"
+    }
+  ],
+  "Hobbies": [
+    {
+      "id": "h1",
+      "name": "Hiking"
+    },
+    {
+      "id": "h2",
+      "name": "Photography"
+    },
+    {
+      "id": "h3",
+      "name": "Reading"
+    }
+  ],
+  "Teams": [
+    {
+      "id": "t1",
+      "name": "Product Development",
+      "companyId": "c1"
+    },
+    {
+      "id": "t2",
+      "name": "Marketing",
+      "companyId": "c2"
+    },
+    {
+      "id": "t3",
+      "name": "Customer Support",
+      "companyId": "c1"
+    }
+  ],
+  "JobOffer": [
+    {
+      "id": "j1",
+      "title": "Software Engineer",
+      "location": "New York",
+      "language": "English",
+      "description": "Develop and maintain software applications.",
+      "teamId": "t1"
+    },
+    {
+      "id": "j2",
+      "title": "Marketing Specialist",
+      "location": "Berlin",
+      "language": "German",
+      "description": "Develop and execute marketing campaigns.",
+      "teamId": "t2"
+    },
+    {
+      "id": "j3",
+      "title": "Customer Support Representative",
+      "location": "San Francisco",
+      "language": "English",
+      "description": "Assist customers with inquiries and support requests.",
+      "teamId": "t3"
+    }
+  ],
+  "Company": [
+    {
+      "id": "c1",
+      "name": "TechCorp",
+      "description": "A leading tech company focused on innovation.",
+      "valueIds": ["v1", "v2"]
+    },
+    {
+      "id": "c2",
+      "name": "MarketGurus",
+      "description": "Experts in marketing and branding solutions.",
+      "valueIds": ["v2", "v3"]
+    }
+  ],
+  "JobSeeker": [
+    {
+      "id": "js1",
+      "status": "active",
+      "email": "seeker1@example.com",
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "hobbyIds": ["h1", "h3"],
+      "valueIds": ["v1"],
+      "teamIds": ["t1"],
+      "workStyle": "remote"
+    },
+    {
+      "id": "js2",
+      "status": "looking",
+      "email": "seeker2@example.com",
+      "firstName": "Bob",
+      "lastName": "Smith",
+      "hobbyIds": ["h2"],
+      "valueIds": ["v3"],
+      "teamIds": ["t2"],
+      "workStyle": "hybrid"
+    }
+  ],
+  "Employee": [
+    {
+      "id": "e1",
+      "status": "employed",
+      "email": "employee1@example.com",
+      "firstName": "Charlie",
+      "lastName": "Brown",
+      "hobbyIds": ["h1"],
+      "valueIds": ["v1", "v3"],
+      "likedTeamIds": ["t1", "t3"],
+      "likedCompanyIds": ["c1"],
+      "workStyle": "onsite"
+    },
+    {
+      "id": "e2",
+      "status": "on leave",
+      "email": "employee2@example.com",
+      "firstName": "Diana",
+      "lastName": "Prince",
+      "hobbyIds": ["h2", "h3"],
+      "valueIds": ["v2"],
+      "likedTeamIds": ["t2"],
+      "likedCompanyIds": ["c2"],
+      "workStyle": "hybrid"
+    }
+  ]
+}
