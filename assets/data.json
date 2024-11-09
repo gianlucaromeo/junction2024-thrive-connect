@@ -194,7 +194,7 @@
       "lastName": "Lee",
       "hobbyIds": ["3", "4", "5"],
       "valueIds": ["3", "5"],
-      "teamIds": ["2"],
+      "teamIds": ["1", "2"],
       "role": "Manager",
       "workStyle": "Remote"
     },

@@ -28,6 +28,16 @@ class DataController extends GetxController {
     return companies.firstWhere((company) => company.id == team.companyId);
   }
 
+  List<Employee> getEmployeesFromTeam(Team team) {
+    return employees.where((employee) {
+      return employee.teamIds.contains(team.id);
+    }).toList();
+  }
+
+  Hobby getHobby(String hobbyId) {
+    return hobbies.firstWhere((hobby) => hobby.id == hobbyId);
+  }
+
   Future<void> loadData() async {
     try {
       final String response = await rootBundle.loadString('assets/data.json');

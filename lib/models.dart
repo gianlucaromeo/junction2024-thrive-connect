@@ -134,7 +134,7 @@ class Company {
       };
 }
 
-class JobSeeker {
+class Employee {
   final String id;
   final String status;
   final String email;
@@ -143,9 +143,10 @@ class JobSeeker {
   final List<String> hobbyIds;
   final List<String> valueIds;
   final List<String> teamIds;
+  final String role;
   final String workStyle;
 
-  JobSeeker({
+  Employee({
     required this.id,
     required this.status,
     required this.email,
@@ -155,9 +156,10 @@ class JobSeeker {
     required this.valueIds,
     required this.teamIds,
     required this.workStyle,
+    required this.role,
   });
 
-  factory JobSeeker.fromJson(Map<String, dynamic> json) => JobSeeker(
+  factory Employee.fromJson(Map<String, dynamic> json) => Employee(
         id: json['id'],
         status: json['status'],
         email: json['email'],
@@ -167,6 +169,7 @@ class JobSeeker {
         valueIds: List<String>.from(json['valueIds'] ?? []),
         teamIds: List<String>.from(json['teamIds'] ?? []),
         workStyle: json['workStyle'],
+        role: json['role'],
       );
 
   Map<String, dynamic> toJson() => {
@@ -179,10 +182,11 @@ class JobSeeker {
         'valueIds': valueIds,
         'teamIds': teamIds,
         'workStyle': workStyle,
+        'role': role,
       };
 }
 
-class Employee {
+class JobSeeker {
   final String id;
   final String status;
   final String email;
@@ -192,10 +196,9 @@ class Employee {
   final List<String> valueIds;
   final List<String> likedTeamIds;
   final List<String> likedCompanyIds;
-  final String role;
   final String workStyle;
 
-  Employee({
+  JobSeeker({
     required this.id,
     required this.status,
     required this.email,
@@ -205,11 +208,10 @@ class Employee {
     required this.valueIds,
     required this.likedTeamIds,
     required this.likedCompanyIds,
-    required this.role,
     required this.workStyle,
   });
 
-  factory Employee.fromJson(Map<String, dynamic> json) => Employee(
+  factory JobSeeker.fromJson(Map<String, dynamic> json) => JobSeeker(
         id: json['id'],
         status: json['status'],
         email: json['email'],
@@ -219,7 +221,6 @@ class Employee {
         valueIds: List<String>.from(json['valueIds'] ?? []),
         likedTeamIds: List<String>.from(json['likedTeamIds'] ?? []),
         likedCompanyIds: List<String>.from(json['likedCompanyIds'] ?? []),
-        role: json['role'],
         workStyle: json['workStyle'],
       );
 

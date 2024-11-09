@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:junction2024_thrive_connect/controllers/data_controller.dart';
@@ -72,6 +74,9 @@ class ReelsPage extends GetView<DataController> {
                   contentSize: controller.jobOffers.length,
                   builder: (context, index) {
                     final jobOffer = controller.jobOffers[index];
+                    final team = controller.getTeamFromJobOffer(jobOffer);
+                    final employees = controller.getEmployeesFromTeam(team);
+                    final hobbies = employees.map((e) => controller.getHobby(e.hobbyIds.first)).toList();
                     return Stack(
                       children: [
                         Container(
@@ -93,12 +98,35 @@ class ReelsPage extends GetView<DataController> {
                               children: [
                                 Row(
                                   children: [
-                                    /// TITLE AND DESCRIPTION
+                                    /// HOBBIES, TITLE, AND DESCRIPTION
                                     Expanded(
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
+                                          Wrap(
+                                            children: hobbies
+                                                .map(
+                                                  (hobby) => Container(
+                                                    margin: 4.0.paddingOnlyRight,
+                                                    padding: const EdgeInsets.symmetric(
+                                                      horizontal: 8.0,
+                                                      vertical: 4.0,
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                      color: AppColors.grey,
+                                                      borderRadius: BorderRadius.circular(16.0),
+                                                    ),
+                                                    child: Text(
+                                                      hobby.name,
+                                                      style: AppFonts.bodyS.copyWith(
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                )
+                                                .toList(),
+                                          ),
                                           Text(
                                             jobOffer.title,
                                             style: AppFonts.h1.copyWith(
