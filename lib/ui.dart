@@ -21,6 +21,7 @@ class AppColors {
   static get greenPastel => const Color(0xFFC2D8BE);
   static get greenText => const Color(0xFF38792C);
   static get purplePastel => const Color(0xFFC4BCFF);
+  static get purpleText => const Color(0xFF9C3CE7);
   static get black => const Color(0xFF0D0B26);
   static get grey => const Color(0xFFABB7C2);
   static get white => const Color(0xFFFFFFFF);
