@@ -14,6 +14,10 @@ class DataController extends GetxController {
   List<JobSeeker> jobSeekers = [];
   List<Employee> employees = [];
 
+  List<JobOffer> getJobOffersForTeam(int teamId) {
+    return jobOffers.where((jobOffer) => jobOffer.teamId == teamId).toList();
+  }
+
   Future<void> loadData() async {
     try {
       final String response = await rootBundle.loadString('assets/data.json');
