@@ -30,7 +30,7 @@ class ReelsPage extends GetView<DataController> {
                 contentSize: controller.teams.length,
                 builder: (context, index) {
                   return Container(
-                    color: Colors.primaries[index % Colors.primaries.length],
+                    // color: Colors.primaries[index % Colors.primaries.length],
                     child: Stack(
                       children: [
                         Container(
@@ -47,7 +47,11 @@ class ReelsPage extends GetView<DataController> {
                           right: 0.0,
                           child: Container(
                             decoration: const BoxDecoration(
-                              color: Colors.black,
+                              gradient: LinearGradient(
+                                colors: [Colors.black, Colors.transparent],
+                                begin: Alignment.bottomCenter,
+                                end: Alignment.topCenter,
+                              ),
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(8.0),
                                 topRight: Radius.circular(8.0),
