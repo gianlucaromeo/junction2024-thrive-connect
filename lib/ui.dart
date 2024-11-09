@@ -16,27 +16,14 @@ class AppPadding {
 }
 
 class AppColors {
-  /* HIGHLIGHTS */
-  static get highlightsDarkest => const Color(0xFF006FFD);
-  static get highlightsLightest => const Color(0xFFABB7C2);
-
-  /* NEUTRAL / LIGHT */
-  static get neutralLightLightest => const Color(0xFFFFFFFF);
-  static get neutralLightLight => const Color(0xFFF8F9FE);
-  static get neutralLightMedium => const Color(0xFFE8E9F1);
-  static get neutralLightDark => const Color(0xFFD4D6DD);
-  static get neutralLightDarkest => const Color(0xFFC5C6CC);
-
-  /* NEUTRAL / DARK **/
-  static get neutralDarkDarkest => const Color(0xFF0D0B26); // Search Bar,
-  static get neutralDarkLight => const Color(0xFF9DB2CE); // App Bar Icon unselected,
-  static get neutralDarkLightest => const Color(0xFF8F9098);
-
-  /* ERROR */
-  static get error => const Color(0xFFED3241);
-
-  /* OTHER */
-  static get selectedIconBackgroundColor => const Color(0xFFC2D8BE);
+  static get redPastel => const Color(0xFFE5AFAF);
+  static get redText => const Color(0xFFAF3838);
+  static get greenPastel => const Color(0xFFC2D8BE);
+  static get greenText => const Color(0xFF38792C);
+  static get purplePastel => const Color(0xFFC4BCFF);
+  static get black => const Color(0xFF0D0B26);
+  static get grey => const Color(0xFFABB7C2);
+  static get white => const Color(0xFFFFFFFF);
 }
 
 TextStyle _ts(FontWeight fontWeight, double fontSize) {

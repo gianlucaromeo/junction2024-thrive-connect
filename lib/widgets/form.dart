@@ -30,28 +30,28 @@ class AppForm extends GetView<NavigationController> {
                 borderRadius: BorderRadius.circular(12.0),
                 borderSide: BorderSide(
                   width: 1.0,
-                  color: AppColors.neutralLightDarkest,
+                  color: AppColors.grey,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.0),
                 borderSide: BorderSide(
                   width: 1.0,
-                  color: AppColors.highlightsDarkest,
+                  color: AppColors.grey,
                 ),
               ),
               errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.0),
                 borderSide: BorderSide(
                   width: 1.0,
-                  color: AppColors.error,
+                  color: AppColors.redPastel,
                 ),
               ),
               focusedErrorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.0),
                 borderSide: BorderSide(
                   width: 1.0,
-                  color: AppColors.error,
+                  color: AppColors.redPastel,
                 ),
               ),
             ),
