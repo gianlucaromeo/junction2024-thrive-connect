@@ -47,8 +47,8 @@ class TeamPage extends GetView<DataController> {
 
   @override
   Widget build(BuildContext context) {
-    final jobOffer =
-        controller.getJobOffersForTeam(navigationController.currentTeam);
+
+    final jobOffer = controller.jobOffers[navigationController.currentJobOfferIndex];
 
     return Scaffold(
       body: Center(
@@ -62,13 +62,13 @@ class TeamPage extends GetView<DataController> {
                 child: FittedBox(
                   fit: BoxFit.cover,
                   child: Image.asset(
-                      controller.teams[navigationController.currentTeam].img),
+                      controller.teams[navigationController.currentJobOfferIndex].img),
                 ),
               ),
             ),
-            Text(controller.teams[navigationController.currentTeam].name),
+            Text(controller.teams[navigationController.currentJobOfferIndex].name),
             Text(
-                controller.teams[navigationController.currentTeam].description),
+                controller.teams[navigationController.currentJobOfferIndex].description),
             Row(
               children: [
                 Text(jobOffer.location),
