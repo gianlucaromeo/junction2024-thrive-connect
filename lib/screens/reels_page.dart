@@ -8,10 +8,27 @@ import 'package:junction2024_thrive_connect/widgets/app_bottom_bar.dart';
 import 'package:tiktoklikescroller/tiktoklikescroller.dart';
 
 class ReelsPage extends GetView<DataController> {
-  ReelsPage({super.key});
+  ReelsPage({
+    super.key,
+    this.teamIndexController,
+  });
+
+  final Controller? teamIndexController;
 
   @override
   Widget build(BuildContext context) {
+    final navigationController = Get.find<NavigationController>();
+    final scrollerController = teamIndexController ?? Controller();
+
+    scrollerController.addListener((event) {
+      if ((event.direction == ScrollDirection.FORWARD ||
+              event.direction == ScrollDirection.BACKWARDS) &&
+          event.pageNo != null &&
+          event.pageNo! >= 0) {
+        navigationController.setCurrentTeam(event.pageNo!);
+      }
+    });
+
     return PopScope(
       canPop: false,
       child: Scaffold(
@@ -32,6 +49,7 @@ class ReelsPage extends GetView<DataController> {
           child: Stack(
             children: [
               TikTokStyleFullPageScroller(
+                controller: scrollerController,
                 contentSize: controller.teams.length,
                 builder: (context, index) {
                   return Container(

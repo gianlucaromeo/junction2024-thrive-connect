@@ -10,7 +10,14 @@ class NavigationController {
 
   int _currentIndex = 0;
 
+  RxInt _currentTeam = 0.obs;
+
   int get currentIndex => _currentIndex;
+  int get currentTeam => _currentTeam.value;
+
+  void setCurrentTeam(int teamIndex) {
+    _currentTeam.value = teamIndex;
+  }
 
   void setCurrentIndex(int index) {
     _currentIndex = index;

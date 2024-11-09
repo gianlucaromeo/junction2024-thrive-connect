@@ -14,8 +14,9 @@ class DataController extends GetxController {
   List<JobSeeker> jobSeekers = [];
   List<Employee> employees = [];
 
-  List<JobOffer> getJobOffersForTeam(int teamId) {
-    return jobOffers.where((jobOffer) => jobOffer.teamId == teamId).toList();
+  JobOffer getJobOffersForTeam(int teamId) {
+    return jobOffers
+        .firstWhere((jobOffer) => jobOffer.teamId == teamId.toString());
   }
 
   Future<void> loadData() async {
