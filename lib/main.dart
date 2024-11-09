@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:junction2024_thrive_connect/controllers/data_controller.dart';
 import 'package:junction2024_thrive_connect/controllers/navigation_controller.dart';
 import 'package:junction2024_thrive_connect/screens/favorites_page.dart';
+import 'package:junction2024_thrive_connect/screens/job_page.dart';
 import 'package:junction2024_thrive_connect/screens/reels_page.dart';
 import 'package:junction2024_thrive_connect/screens/profile_page.dart';
 import 'package:junction2024_thrive_connect/screens/team_page.dart';
@@ -56,6 +57,11 @@ class MainApp extends StatelessWidget {
         GetPage(
           name: '/team',
           page: () => TeamPage(),
+          transition: Transition.rightToLeftWithFade,
+        ),
+        GetPage(
+          name: '/job',
+          page: () => JobPage(),
           transition: Transition.rightToLeftWithFade,
         ),
       ],
