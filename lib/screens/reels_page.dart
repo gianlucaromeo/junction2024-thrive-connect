@@ -48,13 +48,31 @@ class ReelsPage extends GetView<DataController> {
           },
           child: Stack(
             children: [
-              TikTokStyleFullPageScroller(
-                controller: scrollerController,
-                contentSize: controller.teams.length,
-                builder: (context, index) {
-                  return Container(
-                    // color: Colors.primaries[index % Colors.primaries.length],
-                    child: Stack(
+              Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.black.withOpacity(0.4),
+                      Colors.black.withOpacity(0.0),
+                      Colors.black.withOpacity(0.2),
+                      Colors.black.withOpacity(0.3),
+                    ],
+                    stops: const [
+                      0.08,
+                      0.21,
+                      0.55,
+                      0.93,
+                    ],
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                  ),
+                ),
+                child: TikTokStyleFullPageScroller(
+                  controller: scrollerController,
+                  contentSize: controller.jobOffers.length,
+                  builder: (context, index) {
+                    final jobOffer = controller.jobOffers[index];
+                    return Stack(
                       children: [
                         Container(
                           decoration: BoxDecoration(
@@ -69,38 +87,69 @@ class ReelsPage extends GetView<DataController> {
                           left: 0.0,
                           right: 0.0,
                           child: Container(
-                            decoration: const BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [Colors.black, Colors.transparent],
-                                begin: Alignment.bottomCenter,
-                                end: Alignment.topCenter,
-                              ),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(8.0),
-                                topRight: Radius.circular(8.0),
-                              ),
-                            ),
                             padding: const EdgeInsets.all(16.0),
-                            child: Container(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Page $index",
-                                    style: AppFonts.h1.copyWith(
-                                      color: Colors.white,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    /// TITLE AND DESCRIPTION
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            jobOffer.title,
+                                            style: AppFonts.h1.copyWith(
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                          10.0.verticalSpace,
+                                          Text(
+                                            jobOffer.description,
+                                            style: AppFonts.bodyL.copyWith(
+                                              color: Colors.white,
+                                            ),
+                                            maxLines: 3,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  125.0.verticalSpace,
-                                ],
-                              ),
+
+                                    /// ACTIONS
+                                    Column(
+                                      children: [
+                                        IconButton(
+                                          icon:
+                                              const Icon(Icons.favorite_border),
+                                          color: Colors.white,
+                                          onPressed: () {
+                                            // TODO
+                                          },
+                                        ),
+                                        IconButton(
+                                          icon: const Icon(
+                                              Icons.navigate_next_outlined),
+                                          color: Colors.white,
+                                          onPressed: () {
+                                            // TODO
+                                          },
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                110.0.verticalSpace,
+                              ],
                             ),
                           ),
                         ),
                       ],
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
               // Fixed Search Bar
               Positioned(

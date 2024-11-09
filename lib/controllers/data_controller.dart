@@ -19,6 +19,15 @@ class DataController extends GetxController {
         .firstWhere((jobOffer) => jobOffer.teamId == teamId.toString());
   }
 
+  Team getTeamFromJobOffer(JobOffer jobOffer) {
+    return teams.firstWhere((team) => team.id == jobOffer.teamId);
+  }
+
+  Company getCompanyFromJobOffer(JobOffer jobOffer) {
+    final team = getTeamFromJobOffer(jobOffer);
+    return companies.firstWhere((company) => company.id == team.companyId);
+  }
+
   Future<void> loadData() async {
     try {
       final String response = await rootBundle.loadString('assets/data.json');

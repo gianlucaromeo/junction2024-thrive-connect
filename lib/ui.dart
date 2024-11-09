@@ -33,7 +33,7 @@ TextStyle _ts(FontWeight fontWeight, double fontSize) {
 class AppFonts {
   static get textTheme => GoogleFonts.poppinsTextTheme();
 
-  static get _extraBold => FontWeight.w800;
+  static get _extraBold => FontWeight.w900;
   static get _bold => FontWeight.w700;
   static get _semiBold => FontWeight.w600;
   static get _medium => FontWeight.w500;
