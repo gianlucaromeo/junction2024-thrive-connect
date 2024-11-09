@@ -50,6 +50,13 @@ class DataController extends GetxController {
     }).toList();
   }
 
+  List<Employee> getEmployeesFromCompany(Company company) {
+    final teamIds = teams.where((team) => team.companyId == company.id).map((team) => team.id).toList();
+    return employees.where((employee) {
+      return employee.teamIds.any((teamId) => teamIds.contains(teamId));
+    }).toList();
+  }
+
   Hobby getHobby(String hobbyId) {
     return hobbies.firstWhere((hobby) => hobby.id == hobbyId);
   }
