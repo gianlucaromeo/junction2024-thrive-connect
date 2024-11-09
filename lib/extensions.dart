@@ -5,6 +5,7 @@ extension DoubleToEdgeInsets on double {
   EdgeInsets get paddingOnlyBottom => EdgeInsets.only(bottom: this);
   EdgeInsets get paddingOnlyTop => EdgeInsets.only(top: this);
   EdgeInsets get paddingOnlyLeft => EdgeInsets.only(left: this);
+  EdgeInsets get paddingOnlyRight => EdgeInsets.only(right: this);
 }
 
 extension ListOfDoubleToEdgeInsets on List<double> {

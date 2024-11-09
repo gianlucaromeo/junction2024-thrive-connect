@@ -18,7 +18,7 @@ class AppPadding {
 class AppColors {
   /* HIGHLIGHTS */
   static get highlightsDarkest => const Color(0xFF006FFD);
-  static get highlightsLightest => const Color(0xFFEAF2FF);
+  static get highlightsLightest => const Color(0xFFABB7C2);
 
   /* NEUTRAL / LIGHT */
   static get neutralLightLightest => const Color(0xFFFFFFFF);
@@ -28,7 +28,7 @@ class AppColors {
   static get neutralLightDarkest => const Color(0xFFC5C6CC);
 
   /* NEUTRAL / DARK **/
-  static get neutralDarkDarkest => const Color(0xFF1F2024);
+  static get neutralDarkDarkest => const Color(0xFF0D0B26); // Search Bar,
   static get neutralDarkLight => const Color(0xFF71727A);
   static get neutralDarkLightest => const Color(0xFF8F9098);
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:junction2024_thrive_connect/controllers/navigation_controller.dart';
+import 'package:junction2024_thrive_connect/extensions.dart';
 import 'package:junction2024_thrive_connect/ui.dart';
 import 'package:junction2024_thrive_connect/widgets/app_bottom_bar.dart';
 import 'package:tiktoklikescroller/tiktoklikescroller.dart';
@@ -65,13 +66,27 @@ class ReelsPage extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: TextField(
+                    style: AppFonts.bodyL.copyWith(
+                      color: AppColors.neutralLightLightest,
+                    ),
                     decoration: InputDecoration(
                       hintText: "Search",
-                      prefixIcon: const Icon(Icons.search),
+                      hintStyle: AppFonts.bodyL.copyWith(
+                        color: AppColors.highlightsLightest,
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 24.0,
+                        vertical: 12.0,
+                      ),
+                      suffixIcon: Padding(
+                        padding: 24.0.paddingOnlyRight,
+                        child: const Icon(Icons.search),
+                      ),
+                      suffixIconColor: AppColors.highlightsLightest,
                       filled: true,
-                      fillColor: Colors.white.withOpacity(0.9),
+                      fillColor: AppColors.neutralDarkDarkest,
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0),
+                        borderRadius: BorderRadius.circular(32.0),
                         borderSide: BorderSide.none,
                       ),
                     ),
