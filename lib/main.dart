@@ -46,7 +46,7 @@ class MainApp extends StatelessWidget {
         GetPage(
           name: '/team',
           page: () => const TeamPage(),
-          transition: Transition.noTransition,
+          transition: Transition.rightToLeftWithFade,
         ),
       ],
       initialRoute: '/reels',
