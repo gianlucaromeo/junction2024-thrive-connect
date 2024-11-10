@@ -11,62 +11,68 @@ class FavoritesPage extends GetView<DataController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: [20.0, 20.0, 20.0, 0.0].fromLTRB,
-        child: SafeArea(
-          child: Column(
-            children: [
-              /// Search bar
-              TextField(
-                style: AppFonts.bodyL.copyWith(
-                  color: AppColors.grey,
-                ),
-                decoration: InputDecoration(
-                  hintText: "Search",
-                  hintStyle: AppFonts.bodyL.copyWith(
-                    color: AppColors.grey,
-                  ),
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 24.0,
-                    vertical: 12.0,
-                  ),
-                  suffixIcon: Padding(
-                    padding: 24.0.paddingOnlyRight,
-                    child: const Icon(Icons.search),
-                  ),
-                  suffixIconColor: AppColors.grey,
-                  filled: true,
-                  fillColor: AppColors.black,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(32.0),
-                    borderSide: BorderSide.none,
-                  ),
-                ),
-                onChanged: (value) {
-                  // controller.applyFilter(value);
-                },
-              ),
-              20.0.verticalSpace,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        // Set a maximum width to simulate a mobile screen on larger screens
+        double contentWidth = constraints.maxWidth > 600 ? 375.0 : constraints.maxWidth;
 
-              /// Favorites
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      ...controller.favorites.jobOfferIds.map((jobOfferId) {
-                        final jobOffer = controller.getJobOffer(jobOfferId);
-                        return FavoriteCard(jobOffer: jobOffer);
-                      }),
-                    ],
-                  ),
+        return Scaffold(
+          body: Center(
+            child: Container(
+              width: contentWidth,
+              padding: [20.0, 20.0, 20.0, 0.0].fromLTRB,
+              child: SafeArea(
+                child: Column(
+                  children: [
+                    // Search bar
+                    TextField(
+                      style: AppFonts.bodyL.copyWith(color: AppColors.grey),
+                      decoration: InputDecoration(
+                        hintText: "Search",
+                        hintStyle: AppFonts.bodyL.copyWith(color: AppColors.grey),
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 24.0,
+                          vertical: 12.0,
+                        ),
+                        suffixIcon: Padding(
+                          padding: 24.0.paddingOnlyRight,
+                          child: const Icon(Icons.search),
+                        ),
+                        suffixIconColor: AppColors.grey,
+                        filled: true,
+                        fillColor: AppColors.black,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32.0),
+                          borderSide: BorderSide.none,
+                        ),
+                      ),
+                      onChanged: (value) {
+                        // controller.applyFilter(value);
+                      },
+                    ),
+                    20.0.verticalSpace,
+
+                    // Favorites
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            ...controller.favorites.jobOfferIds.map((jobOfferId) {
+                              final jobOffer = controller.getJobOffer(jobOfferId);
+                              return FavoriteCard(jobOffer: jobOffer);
+                            }),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              )
-            ],
+              ),
+            ),
           ),
-        ),
-      ),
-      bottomNavigationBar: AppBottomBar(),
+          bottomNavigationBar: AppBottomBar(),
+        );
+      },
     );
   }
 }

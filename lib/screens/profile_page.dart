@@ -29,9 +29,10 @@ class ProfilePage extends GetView<DataController> {
         backgroundColor: AppColors.white,
       ),
       backgroundColor: AppColors.white,
-      body: Padding(
-        padding: EdgeInsets.all(24.0),
-        child: Center(
+      body: Center(
+        child: Container(
+          width: 400, // Fixed width to resemble mobile layout on web
+          padding: EdgeInsets.all(24.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -76,9 +77,7 @@ class ProfilePage extends GetView<DataController> {
                               "RESUME",
                               style: AppFonts.h2,
                             ),
-                            SizedBox(
-                                height:
-                                    8.0), // Spacing between text and image section
+                            SizedBox(height: 8.0),
                             Column(
                               children: [
                                 Image.asset(
@@ -87,14 +86,12 @@ class ProfilePage extends GetView<DataController> {
                                   fit: BoxFit.cover,
                                 ),
                                 SizedBox(height: 4.0),
-                                // Space between image and download text
                                 Text("download", style: AppFonts.bodyS),
                               ],
                             ),
                           ],
                         ),
                         SizedBox(width: 16.0),
-                        // Space between the two main columns
                         // Second Column with "SUMMARY" and description container
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -105,7 +102,6 @@ class ProfilePage extends GetView<DataController> {
                               style: AppFonts.h2,
                             ),
                             SizedBox(height: 8.0),
-                            // Spacing between text and description container
                             Container(
                               decoration: BoxDecoration(
                                 color: AppColors.greyLight,
@@ -118,7 +114,7 @@ class ProfilePage extends GetView<DataController> {
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
                               padding: EdgeInsets.all(8.0),
-                              width: 180, // Adjust width as needed
+                              width: 180,
                               child: Text(
                                 "3+ years in Software Engineering studied Computer Science at Aalto University (Finland).",
                                 style: AppFonts.bodyS,
@@ -129,64 +125,68 @@ class ProfilePage extends GetView<DataController> {
                       ],
                     ),
                     SizedBox(height: 40),
-                    Wrap(spacing: 8.0, runSpacing: 8.0, children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 10.0,
-                          vertical: 4.0,
-                        ),
-                        decoration: BoxDecoration(
-                          color: AppColors.redPastel,
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        child: Text(
-                          jobSeeker.role,
-                          style: AppFonts.actionL.copyWith(
-                            color: AppColors.redText,
+                    Wrap(
+                      spacing: 8.0,
+                      runSpacing: 8.0,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10.0,
+                            vertical: 4.0,
+                          ),
+                          decoration: BoxDecoration(
+                            color: AppColors.redPastel,
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          child: Text(
+                            jobSeeker.role,
+                            style: AppFonts.actionL.copyWith(
+                              color: AppColors.redText,
+                            ),
                           ),
                         ),
-                      ),
-                      ...hobbies
-                          .map(
-                            (value) => Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 10.0,
-                                vertical: 4.0,
-                              ),
-                              decoration: BoxDecoration(
-                                color: AppColors.greenPastel,
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              child: Text(
-                                value.name,
-                                style: AppFonts.actionL.copyWith(
-                                  color: AppColors.greenText,
-                                ),
+                        ...hobbies
+                            .map(
+                              (value) => Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 10.0,
+                              vertical: 4.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppColors.greenPastel,
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Text(
+                              value.name,
+                              style: AppFonts.actionL.copyWith(
+                                color: AppColors.greenText,
                               ),
                             ),
-                          )
-                          .toList(),
-                      ...jobSeekerValues
-                          .map(
-                            (value) => Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 10.0,
-                                vertical: 4.0,
-                              ),
-                              decoration: BoxDecoration(
-                                color: AppColors.purplePastel,
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              child: Text(
-                                value.name,
-                                style: AppFonts.actionL.copyWith(
-                                  color: AppColors.purpleText,
-                                ),
+                          ),
+                        )
+                            .toList(),
+                        ...jobSeekerValues
+                            .map(
+                              (value) => Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 10.0,
+                              vertical: 4.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppColors.purplePastel,
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Text(
+                              value.name,
+                              style: AppFonts.actionL.copyWith(
+                                color: AppColors.purpleText,
                               ),
                             ),
-                          )
-                          .toList(),
-                    ]),
+                          ),
+                        )
+                            .toList(),
+                      ],
+                    ),
                   ],
                 )
               ],
