@@ -32,14 +32,14 @@ Curious about how we worked in less than 48 hours?
 - Spaghetti code with [Flutter](https://inteamate.vercel.app/)
 - Machine learning with Python
 
-⚠️ Warning! ⚠️
-The application is built for mobile, so we highly recommend experiencing it on a smartphone (both via Figma and the [deployed version](https://inteamate.vercel.app)). Our front end is currently based on a mock dataset, but the system is designed for easy adaptation to a back-end API interface. While some minor features remain unimplemented, all main functionalities of the app are fully coded. The application is written in Flutter, a framework built on Dart. Flutter’s standout feature is its ability to natively export to multiple platforms, including Android, iOS, and the web (as seen in the deployed version), opening up the potential for future deployment on standard mobile marketplaces.
+### Disclaimer ⚠️
+The application was built for mobile in < 48 confusing hours. Since it's not avaiable on the store, we suggest you experiencing it from your smartphone (either on Figma or on web the [deployed version on the web](https://inteamate.vercel.app)). 
+<br/>
+
+Our front end is currently based on a mock dataset, but the system is designed for easy adaptation to a back-end API interface. While some minor features remain unimplemented, all main functionalities of the app are fully coded.
+<br/>
 
 Additionally, the repository includes a structured set of over 2000 instances of verisimilar data generated specifically for the app’s purpose. A transformer-based algorithm is also included in the code, designed to interpret specific text fields (e.g., reviews and comments) and, using keywords, to determine if opinions are positive or negative. This feature aims to support the ranking system for company well-being. Although the dataset and model are not yet implemented due to network, performance, time, and budget constraints, they can be readily integrated with minimal additional effort.
-
-
-
-
 
 ### Members
 - Gianluca Romeo
